@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 461b8024da40ddc48b627e0ffe6b23b6, type: 3}
-  m_Name: Player
+  m_Name: BaseEmemy
   m_EditorClassIdentifier: 
-  health: 100
-  speed: 5
-  damage: 0
+  health: 10
+  speed: 0.1
+  damage: 5

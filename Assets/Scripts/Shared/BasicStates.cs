@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class BasicStates : MonoBehaviour
 {
     //Basic States
@@ -22,7 +23,7 @@ public class BasicStates : MonoBehaviour
 
         entity_RB = GetComponent<Rigidbody2D>();
     }
-    private void DestroyEntity()
+    internal void DestroyEntity()
     {
         Destroy(gameObject);
     }
