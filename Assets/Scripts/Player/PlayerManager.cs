@@ -17,6 +17,15 @@ public class PlayerManager : BasicStates
     bool is_Hit;
     //Truck
     TruckManager the_Truck_Manager;
+    //Weapons
+    public bool[] weapon_Unlock = new bool[4];
+    public GameObject[] weapons = new GameObject[3];
+    int current_Weapon;
+
+    private void Start()
+    {
+        weapon_Unlock[0] = true;
+    }
 
     private void Update()
     {
@@ -28,6 +37,26 @@ public class PlayerManager : BasicStates
         {
             the_Truck_Manager.CurrentTruckHealth();
         }
+    }
+    private void LateUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            NewWeapon(0);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            NewWeapon(1);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            NewWeapon(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            NewWeapon(3);
+        }
+        
     }
     internal bool isGrounded()
     {
@@ -86,7 +115,37 @@ public class PlayerManager : BasicStates
             }
         }
     }
-
+    public void NewWeapon(int NW)
+    {
+        if (weapon_Unlock[NW])
+        {
+            weapons[current_Weapon].SetActive(false);
+            switch (NW)
+            {
+                case 0:
+                    {
+                        weapons[0].SetActive(true);
+                        break;
+                    }
+                case 1:
+                    {
+                        weapons[1].SetActive(true);
+                        break;
+                    }
+                case 2:
+                    {
+                        weapons[2].SetActive(true);
+                        break;
+                    }
+                case 3:
+                    {
+                        weapons[3].SetActive(true);
+                        break;
+                    }
+            }
+            current_Weapon = NW;
+        }
+    }
     public IEnumerator CurrentlyHit()
     {
         print("hit1");

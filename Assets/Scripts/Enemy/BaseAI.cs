@@ -20,7 +20,7 @@ public class BaseAI : BasicStates
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         entity_Health -= damage;
         if (entity_Health <= 0)

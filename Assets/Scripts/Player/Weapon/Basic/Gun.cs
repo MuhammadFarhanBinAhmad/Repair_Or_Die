@@ -1,15 +1,31 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public GameObject bullet;
-
+    public Bullet bullet;
     public Transform spawn_Point;
-
+    //fire rate
     public float fire_Rate;
-    float next_Time_To_Fire = 0;
+    internal float next_Time_To_Fire = 0;
+    //ammo
+    public int bullet_Left;
+    public float reload_Time;
+    internal bool reloading;
+    //upgradables
+    public int[] gun_Ammo_Capacity = new int[4];
+    public int[] damage_Multiplier = new int[3];
+    //current level
+    internal int current_Damage_Level;
+    internal int current_Ammo_Level;
 
-    private void Update()
+    private void Start()
+    {
+        bullet_Left = gun_Ammo_Capacity[0];
+    }
+
+    public void FixedUpdate()
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 5;
@@ -20,18 +36,6 @@ public class Gun : MonoBehaviour
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-
         transform.position = FindObjectOfType<PlayerManager>().transform.position;
-
-        if (Input.GetMouseButtonDown(0) && Time.time >= next_Time_To_Fire)
-        {
-            Shooting();
-        }
-    }
-
-    void Shooting()
-    {
-        Instantiate(bullet, spawn_Point.position, spawn_Point.rotation);
-        next_Time_To_Fire = Time.time + 1f / fire_Rate;
     }
 }
