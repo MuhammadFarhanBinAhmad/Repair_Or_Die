@@ -2,8 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol : Gun
+public class BaseGun : Gun
 {
+    public int bullet_Left;
+    //upgradables
+    public int[] gun_Ammo_Capacity = new int[4];
+    public float[] damage_Multiplier = new float[3];
+    //current level
+    public int current_Damage_Level;
+    public int current_Ammo_Level;
+
+    private void Start()
+    {
+        bullet_Left = gun_Ammo_Capacity[0];
+    }
+
     public virtual void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -28,20 +41,15 @@ public class Pistol : Gun
             reloading = true;
         }
     }
-    IEnumerator Reloading()
+    internal IEnumerator Reloading()
     {
         yield return new WaitForSeconds(reload_Time);
         RelodGun();
     }
-    public void test()
-    {
-        print("hit");
-    }
-    void Shooting()
+    internal void Shooting()
     {
         bullet_Left--;
         Bullet B = Instantiate(bullet, spawn_Point.position, spawn_Point.rotation);
-        //next_Time_To_Fire = Time.time + 1f / fire_Rate;
         switch (current_Damage_Level)
         {
             case 0:

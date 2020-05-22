@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8447863435129535713}
   - component: {fileID: 8447863435129535712}
   m_Layer: 0
-  m_Name: MachineGunBullet
+  m_Name: NormalBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,4 +232,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2500
-  damage: 2
+  damage: 5
+  the_Bullet_Stats: {fileID: 11400000, guid: d680016877a1db94586ad6f026b2b1a3, type: 2}

@@ -10,20 +10,9 @@ public class Gun : MonoBehaviour
     public float fire_Rate;
     internal float next_Time_To_Fire = 0;
     //ammo
-    public int bullet_Left;
+    //public int bullet_Left;
     public float reload_Time;
     internal bool reloading;
-    //upgradables
-    public int[] gun_Ammo_Capacity = new int[4];
-    public int[] damage_Multiplier = new int[3];
-    //current level
-    internal int current_Damage_Level;
-    internal int current_Ammo_Level;
-
-    private void Start()
-    {
-        bullet_Left = gun_Ammo_Capacity[0];
-    }
 
     public void FixedUpdate()
     {
