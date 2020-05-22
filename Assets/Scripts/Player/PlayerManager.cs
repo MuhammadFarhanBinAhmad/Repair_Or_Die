@@ -15,12 +15,13 @@ public class PlayerManager : BasicStates
     //Knockback
     public float the_Knock_Back_Force;
     bool is_Hit;
-    //Truck
-    TruckManager the_Truck_Manager;
     //Weapons
     public bool[] weapon_Unlock = new bool[4];
     public GameObject[] weapons = new GameObject[3];
     int current_Weapon;
+    //Interaction
+    TruckManager the_Truck_Manager;
+    ShopManager the_Shop_Manager;
 
     private void Start()
     {
@@ -36,6 +37,19 @@ public class PlayerManager : BasicStates
         if (Input.GetKey(KeyCode.E) && the_Truck_Manager !=null)
         {
             the_Truck_Manager.CurrentTruckHealth();
+        }
+        if (Input.GetKey(KeyCode.Q) && the_Shop_Manager != null)
+        {
+            if (the_Shop_Manager.shop_Open)
+            {
+                the_Shop_Manager.CloseStoreMenu();
+                print("hit2");
+            }
+            else
+            {
+                the_Shop_Manager.OpenStoreMenu();
+                print("hit");
+            }
         }
     }
     private void LateUpdate()
@@ -159,6 +173,10 @@ public class PlayerManager : BasicStates
         if (other.GetComponent<TruckManager>()!=null)
         {
             the_Truck_Manager = other.GetComponent<TruckManager>();
+        }
+        if (other.GetComponent<ShopManager>() != null)
+        {
+            the_Shop_Manager = other.GetComponent<ShopManager>();
         }
     }
 }
