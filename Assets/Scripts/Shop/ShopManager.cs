@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+[System.Serializable]
+class Weapon
+{
+    public string name;
+    public string cost;
+}
 
 public class ShopManager : MonoBehaviour
 {
-
     PlayerManager the_Player_Manager;
     public GameObject shop_UI;
-    internal bool shop_Open;
+
+    public bool shop_Open;
+    bool weapon_Bought;
 
     private void Start()
     {
@@ -16,18 +22,22 @@ public class ShopManager : MonoBehaviour
     }
     public void OpenStoreMenu()
     {
-        shop_UI.SetActive(true);
         shop_Open = true;
-        Time.timeScale = 0.001f;
+        shop_UI.SetActive(true);
+        Time.timeScale = 0;
     }
     public void CloseStoreMenu()
     {
-        shop_UI.SetActive(false);
         shop_Open = false;
+        shop_UI.SetActive(false);
         Time.timeScale = 1;
     }
     public void UnlockWeapon(int weapon)
     {
-        the_Player_Manager.weapon_Unlock[weapon] = true;
+        if (!the_Player_Manager.weapon_Unlock[weapon])
+        {
+            the_Player_Manager.weapon_Unlock[weapon] = true;
+        }
     }
+
 }

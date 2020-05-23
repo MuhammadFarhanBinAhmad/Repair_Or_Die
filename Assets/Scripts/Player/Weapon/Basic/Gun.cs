@@ -6,10 +6,10 @@ public class Gun : MonoBehaviour
 {
     public Bullet bullet;
     public Transform spawn_Point;
+    public Transform gun_Position;
     //fire rate
     public float fire_Rate;
     internal float next_Time_To_Fire = 0;
-    //ammo
     //public int bullet_Left;
     public float reload_Time;
     internal bool reloading;
@@ -25,6 +25,7 @@ public class Gun : MonoBehaviour
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.position = FindObjectOfType<PlayerManager>().transform.position;
+
+        transform.position = gun_Position.position;
     }
 }

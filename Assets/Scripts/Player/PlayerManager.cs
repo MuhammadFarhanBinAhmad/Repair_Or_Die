@@ -21,7 +21,9 @@ public class PlayerManager : BasicStates
     int current_Weapon;
     //Interaction
     TruckManager the_Truck_Manager;
-    ShopManager the_Shop_Manager;
+    public ShopManager the_Shop_Manager;
+    //Money
+    public int total_Money;
 
     private void Start()
     {
@@ -31,25 +33,23 @@ public class PlayerManager : BasicStates
     private void Update()
     {
         PlayerMovement();
-    }
-    private void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.E) && the_Truck_Manager !=null)
-        {
-            the_Truck_Manager.CurrentTruckHealth();
-        }
-        if (Input.GetKey(KeyCode.Q) && the_Shop_Manager != null)
+        if (Input.GetKeyDown(KeyCode.Q) && the_Shop_Manager != null)
         {
             if (the_Shop_Manager.shop_Open)
             {
                 the_Shop_Manager.CloseStoreMenu();
-                print("hit2");
             }
             else
             {
                 the_Shop_Manager.OpenStoreMenu();
-                print("hit");
             }
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.E) && the_Truck_Manager != null)
+        {
+            the_Truck_Manager.CurrentTruckHealth();
         }
     }
     private void LateUpdate()
@@ -88,7 +88,10 @@ public class PlayerManager : BasicStates
         print(entity_Health);
         return entity_Health -= damage;
     }
-
+    internal int MoneyEarn(int M)
+    {
+        return total_Money += M;
+    }
     void PlayerMovement()
     {
         //movement
@@ -102,14 +105,14 @@ public class PlayerManager : BasicStates
         }
         if (!is_Hit)
         {
-            if (Input.GetAxisRaw("Horizontal") >= 0.1)
+            /*if (Input.GetAxisRaw("Horizontal") >= 0.1)
             {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
             if (Input.GetAxisRaw("Horizontal") <= -0.1)
             {
                 transform.rotation = Quaternion.Euler(0, -180, 0);
-            }
+            }*/
             //jumping
             if (Input.GetButtonDown("Jump") && isGrounded())
             {
@@ -162,7 +165,6 @@ public class PlayerManager : BasicStates
     }
     public IEnumerator CurrentlyHit()
     {
-        print("hit1");
         is_Hit = true;
         yield return new WaitForSeconds(1);
         is_Hit = false;

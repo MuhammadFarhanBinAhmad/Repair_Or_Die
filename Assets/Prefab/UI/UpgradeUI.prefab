@@ -84,6 +84,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5304859933300154284}
     m_Modifications:
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.data[0]
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.data[1]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.data[2]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.data[0]
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.data[1]
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.data[2]
+      value: 700
+      objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941302, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -399,71 +439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5304859933300154284}
     m_Modifications:
-    - target: {fileID: 5312273647335312062, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273647335312062, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273647335312062, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273647335312062, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273647414665994, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273647414665994, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273647414665994, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273647414665994, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273649075941296, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273649075941296, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273649075941296, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273649075941296, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5312273649075941296, guid: 87a9e0c872b9be44fa2840af5248395e,
-        type: 3}
-      propertyPath: m_text
-      value: Machinegun
-      objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941302, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -280,6 +280,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 952248770981534782, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_text
+      value: Machinegun
+      objectReference: {fileID: 0}
     - target: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
       propertyPath: upgrable_Weapon

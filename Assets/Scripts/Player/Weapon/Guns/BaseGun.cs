@@ -12,27 +12,29 @@ public class BaseGun : Gun
     public int current_Damage_Level;
     public int current_Ammo_Level;
 
+    public SO_BulletStates the_Bullet_Data;
+
+    ShopManager the_SM;
+    ObjectPoolBullet the_OPB;
+
     private void Start()
     {
+        the_OPB =FindObjectOfType<ObjectPoolBullet>();
+        the_SM = FindObjectOfType<ShopManager>();
         bullet_Left = gun_Ammo_Capacity[0];
     }
 
     public virtual void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            current_Ammo_Level++;
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            current_Damage_Level++;
-        }
         if (bullet_Left > 0 && !reloading)
         {
             //if (Input.GetMouseButton(0) && Time.time >= next_Time_To_Fire)
             if (Input.GetMouseButtonDown(0))
             {
-                Shooting();
+                if (the_SM.shop_Open == false)
+                {
+                    Shooting();
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.R) && bullet_Left == 0 && !reloading || Input.GetKeyDown(KeyCode.R) && !reloading)
@@ -48,8 +50,21 @@ public class BaseGun : Gun
     }
     internal void Shooting()
     {
-        bullet_Left--;
-        Bullet B = Instantiate(bullet, spawn_Point.position, spawn_Point.rotation);
+        //Bullet B = Instantiate(bullet, spawn_Point.position, spawn_Point.rotation);
+        int current_i = 0;
+        for (int i = 0; i < the_OPB.bullet_List.Count; i++)
+        {
+            if (!the_OPB.bullet_List[i].activeInHierarchy)
+            {
+                current_i = i;
+                the_OPB.bullet_List[i].transform.position = spawn_Point.position;
+                the_OPB.bullet_List[i].transform.rotation = spawn_Point.rotation;
+                the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data; 
+                the_OPB.bullet_List[i].SetActive(true);
+                bullet_Left--;
+                break;
+            }
+        }
         switch (current_Damage_Level)
         {
             case 0:
@@ -58,23 +73,23 @@ public class BaseGun : Gun
                 }
             case 1:
                 {
-                    float new_Damage;
-                    new_Damage = B.damage * damage_Multiplier[0];
-                    B.damage = new_Damage;
+                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;
+                    new_Damage *= damage_Multiplier[0];
+                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;
                     break;
                 }
             case 2:
                 {
-                    float new_Damage;
-                    new_Damage = B.damage * damage_Multiplier[1];
-                    B.damage = new_Damage;
+                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;
+                    new_Damage *= damage_Multiplier[1];
+                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;
                     break;
                 }
             case 3:
                 {
-                    float new_Damage;
-                    new_Damage = B.damage * damage_Multiplier[2];
-                    B.damage = new_Damage;
+                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;
+                    new_Damage *= damage_Multiplier[2];
+                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;
                     break;
                 }
         }

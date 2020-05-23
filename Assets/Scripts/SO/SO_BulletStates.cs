@@ -5,4 +5,5 @@ public class SO_BulletStates : ScriptableObject
 {
     public float damage;
     public float speed;
+    public float destroy_Time;
 }

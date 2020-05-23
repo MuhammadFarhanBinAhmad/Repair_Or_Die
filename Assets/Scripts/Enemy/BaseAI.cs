@@ -7,6 +7,8 @@ public class BaseAI : BasicStates
 
     PlayerManager the_Player;
 
+    public int min_Money, max_Money;
+
     private void Start()
     {
         the_Player = FindObjectOfType<PlayerManager>();
@@ -25,6 +27,7 @@ public class BaseAI : BasicStates
         entity_Health -= damage;
         if (entity_Health <= 0)
         {
+            the_Player.MoneyEarn(Random.Range(min_Money, max_Money));
             DestroyEntity();
         }
     }
