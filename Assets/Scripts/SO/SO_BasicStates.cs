@@ -8,4 +8,6 @@ public class SO_BasicStates : ScriptableObject
     public float health;
     public float speed;
     public float damage;
+    public int min_Money, max_Money;
+
 }

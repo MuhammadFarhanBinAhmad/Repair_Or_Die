@@ -290,6 +290,41 @@ PrefabInstance:
       propertyPath: upgrable_Weapon
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: the_Stats.buying_Price
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.data[0]
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.data[1]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.data[2]
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.data[0]
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.data[1]
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.data[2]
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 1149286343721132022, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument

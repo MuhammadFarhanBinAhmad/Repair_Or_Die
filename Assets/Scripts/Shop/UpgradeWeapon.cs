@@ -12,8 +12,10 @@ public class stats
 }
 public class UpgradeWeapon : MonoBehaviour
 {
+    public int weapon_Number;
+
     public BaseGun upgrable_Weapon;
-    PlayerManager the_Player_Manager;
+    public PlayerManager the_Player_Manager;
 
     public stats the_Stats;
 
@@ -22,38 +24,43 @@ public class UpgradeWeapon : MonoBehaviour
         the_Player_Manager = FindObjectOfType<PlayerManager>();
     }
 
-    public void UnlockWeapon(int weapon)
+    public void UnlockWeapon()
     {
         if (the_Player_Manager.total_Money >= the_Stats.buying_Price)
         {
-            if (!the_Player_Manager.weapon_Unlock[weapon])
+            if (!the_Player_Manager.weapon_Unlock[weapon_Number])
             {
-                the_Player_Manager.weapon_Unlock[weapon] = true;
+                print(weapon_Number);
+                the_Player_Manager.weapon_Unlock[weapon_Number] = true;
                 the_Player_Manager.total_Money -= the_Stats.buying_Price;
             }
         }  
     }
     public void UpgradeDamage()
     {
-        if (the_Player_Manager.total_Money >= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level])
+        if (the_Player_Manager.weapon_Unlock[weapon_Number])
         {
-            if (upgrable_Weapon.current_Damage_Level <= upgrable_Weapon.damage_Multiplier.Length)
+            if (the_Player_Manager.total_Money >= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level])
             {
-                upgrable_Weapon.current_Damage_Level++;
-                the_Player_Manager.total_Money -= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level];
-                print("upgrade damage");
+                if (upgrable_Weapon.current_Damage_Level <= upgrable_Weapon.damage_Multiplier.Length)
+                {
+                    upgrable_Weapon.current_Damage_Level++;
+                    the_Player_Manager.total_Money -= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level];
+                }
             }
         }
     }
     public void UpgradeAmmoSize()
     {
-        if (the_Player_Manager.total_Money >= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level])
+        if (the_Player_Manager.weapon_Unlock[weapon_Number])
         {
-            if (upgrable_Weapon.current_Ammo_Level <= upgrable_Weapon.gun_Ammo_Capacity.Length - 1)
+            if (the_Player_Manager.total_Money >= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level])
             {
-                upgrable_Weapon.current_Ammo_Level++;
-                the_Player_Manager.total_Money -= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level];
-                print("upgrade ammo");
+                if (upgrable_Weapon.current_Ammo_Level <= upgrable_Weapon.gun_Ammo_Capacity.Length)
+                {
+                    upgrable_Weapon.current_Ammo_Level++;
+                    the_Player_Manager.total_Money -= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level];
+                }
             }
         }
     }

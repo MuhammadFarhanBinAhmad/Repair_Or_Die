@@ -97,7 +97,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3762646157192818143
 Transform:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3c288f6e7dbe040a9de44d222802a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8447863435129535712, guid: 6cc1fe848b487974c97b024b4440776c, type: 3}
+  bullet: {fileID: 8447863435129535712, guid: 20d0ee7be1cdbfb42965dea6c7f2d38e, type: 3}
   spawn_Point: {fileID: 4179754291099040706}
   gun_Position: {fileID: 0}
   fire_Rate: 4
@@ -138,4 +138,4 @@ MonoBehaviour:
   - 4
   current_Damage_Level: 0
   current_Ammo_Level: 0
-  the_Bullet_Data: {fileID: 0}
+  the_Bullet_Data: {fileID: 11400000, guid: 080f874fab87e6841a7980e446fd5efb, type: 2}

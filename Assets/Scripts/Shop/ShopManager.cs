@@ -1,12 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
-class Weapon
-{
-    public string name;
-    public string cost;
-}
 
 public class ShopManager : MonoBehaviour
 {
@@ -31,13 +25,6 @@ public class ShopManager : MonoBehaviour
         shop_Open = false;
         shop_UI.SetActive(false);
         Time.timeScale = 1;
-    }
-    public void UnlockWeapon(int weapon)
-    {
-        if (!the_Player_Manager.weapon_Unlock[weapon])
-        {
-            the_Player_Manager.weapon_Unlock[weapon] = true;
-        }
     }
 
 }

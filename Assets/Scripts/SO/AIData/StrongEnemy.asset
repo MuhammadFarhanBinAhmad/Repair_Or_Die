@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec3999fabe6bbf440a02bba64520dd16, type: 3}
-  m_Name: Pistol
+  m_Script: {fileID: 11500000, guid: 461b8024da40ddc48b627e0ffe6b23b6, type: 3}
+  m_Name: StrongEnemy
   m_EditorClassIdentifier: 
-  damage: 5
-  speed: 10000
-  destroy_Time: 5
+  health: 75
+  speed: 0.09
+  damage: 15
+  min_Money: 40
+  max_Money: 60

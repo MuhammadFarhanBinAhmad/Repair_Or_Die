@@ -14,8 +14,8 @@ public class BaseGun : Gun
 
     public SO_BulletStates the_Bullet_Data;
 
-    ShopManager the_SM;
-    ObjectPoolBullet the_OPB;
+    internal ShopManager the_SM;
+    internal ObjectPoolBullet the_OPB;
 
     private void Start()
     {
@@ -48,7 +48,7 @@ public class BaseGun : Gun
         yield return new WaitForSeconds(reload_Time);
         RelodGun();
     }
-    internal void Shooting()
+    public virtual void Shooting()
     {
         //Bullet B = Instantiate(bullet, spawn_Point.position, spawn_Point.rotation);
         int current_i = 0;
@@ -61,10 +61,42 @@ public class BaseGun : Gun
                 the_OPB.bullet_List[i].transform.rotation = spawn_Point.rotation;
                 the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data; 
                 the_OPB.bullet_List[i].SetActive(true);
+                DamageLevel(current_i);
                 bullet_Left--;
                 break;
             }
         }
+        /*switch (current_Damage_Level)
+        {
+            case 0:
+                {
+                    break;
+                }
+            case 1:
+                {
+                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;
+                    new_Damage *= damage_Multiplier[0];
+                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;
+                    break;
+                }
+            case 2:
+                {
+                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;
+                    new_Damage *= damage_Multiplier[1];
+                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;
+                    break;
+                }
+            case 3:
+                {
+                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;
+                    new_Damage *= damage_Multiplier[2];
+                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;
+                    break;
+                }
+        }*/
+    }
+    internal void DamageLevel(int current_i)
+    {
         switch (current_Damage_Level)
         {
             case 0:
@@ -94,7 +126,7 @@ public class BaseGun : Gun
                 }
         }
     }
-    void RelodGun()
+    internal void RelodGun()
     {
         switch (current_Ammo_Level)
         {
