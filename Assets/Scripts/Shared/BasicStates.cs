@@ -9,13 +9,13 @@ public class BasicStates : MonoBehaviour
     //Basic States
     public SO_BasicStates entity_BasicStates;
 
-    protected float entity_Health;
-    protected float entity_Speed;
-    protected float entity_Damage;
+    internal float entity_Health;
+    internal float entity_Speed;
+    internal float entity_Damage;
 
     public int entity_Min_Money, entity_Max_Money;
 
-    public Rigidbody2D entity_RB;
+    //public Rigidbody2D entity_RB;
 
     private void Awake()
     {
@@ -24,8 +24,6 @@ public class BasicStates : MonoBehaviour
         entity_Damage = entity_BasicStates.damage;
         entity_Min_Money = entity_BasicStates.min_Money;
         entity_Max_Money = entity_BasicStates.max_Money;
-
-        entity_RB = GetComponent<Rigidbody2D>();
     }
     internal void DestroyEntity()
     {

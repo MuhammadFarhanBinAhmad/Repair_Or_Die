@@ -8,6 +8,7 @@ public class PlayerManager : BasicStates
     public Transform check_Ground;
     public LayerMask the_Ground;
     ////player special states
+    public Rigidbody2D entity_RB;
     //jump
     public float jump_Force = 5;
     public float fall_Multiplier = 2.5f;
@@ -20,6 +21,7 @@ public class PlayerManager : BasicStates
     public GameObject[] weapons = new GameObject[3];
     int current_Weapon;
     //Interaction
+    internal bool repairing_Truck;
     TruckManager the_Truck_Manager;
     public ShopManager the_Shop_Manager;
     //Money
@@ -27,6 +29,7 @@ public class PlayerManager : BasicStates
 
     private void Start()
     {
+        entity_RB = GetComponent<Rigidbody2D>();
         weapon_Unlock[0] = true;
     }
 
@@ -49,7 +52,12 @@ public class PlayerManager : BasicStates
     {
         if (Input.GetKey(KeyCode.E) && the_Truck_Manager != null)
         {
+            repairing_Truck = true;
             the_Truck_Manager.CurrentTruckHealth();
+        }
+        else
+        {
+            repairing_Truck = false;
         }
     }
     private void LateUpdate()
@@ -94,41 +102,45 @@ public class PlayerManager : BasicStates
     }
     void PlayerMovement()
     {
-        //movement
-        float H = Input.GetAxisRaw("Horizontal") * entity_Speed;
 
-        entity_RB.velocity = new Vector2(H, entity_RB.velocity.y);
         if (is_Hit)
         {
             print("being hit");
             entity_RB.velocity = new Vector2(-the_Knock_Back_Force, the_Knock_Back_Force);//knockback
         }
-        if (!is_Hit)
+        if (!repairing_Truck)
         {
-            /*if (Input.GetAxisRaw("Horizontal") >= 0.1)
+            if (!is_Hit)
             {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-            if (Input.GetAxisRaw("Horizontal") <= -0.1)
-            {
-                transform.rotation = Quaternion.Euler(0, -180, 0);
-            }*/
-            //jumping
-            if (Input.GetButtonDown("Jump") && isGrounded())
-            {
-                float JF = jump_Force;
-                entity_RB.AddForce(Vector2.up * JF);
-            }
-            //falling speed
-            //holding jumping button
-            if (entity_RB.velocity.y < 0)
-            {
-                entity_RB.velocity += Vector2.up * Physics2D.gravity.y * (fall_Multiplier - 1) * Time.deltaTime;
-            }
-            //not holding jump button
-            else if (entity_RB.velocity.y > 0 && !Input.GetButton("Jump"))
-            {
-                entity_RB.velocity += Vector2.up * Physics2D.gravity.y * (low_Jump_Multiplier - 1) * Time.deltaTime;
+                /*if (Input.GetAxisRaw("Horizontal") >= 0.1)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                if (Input.GetAxisRaw("Horizontal") <= -0.1)
+                {
+                    transform.rotation = Quaternion.Euler(0, -180, 0);
+                }*/
+                //movement
+                float H = Input.GetAxisRaw("Horizontal") * entity_Speed;
+
+                entity_RB.velocity = new Vector2(H, entity_RB.velocity.y);
+                //jumping
+                if (Input.GetButtonDown("Jump") && isGrounded())
+                {
+                    float JF = jump_Force;
+                    entity_RB.AddForce(Vector2.up * JF);
+                }
+                //falling speed
+                //holding jumping button
+                if (entity_RB.velocity.y < 0)
+                {
+                    entity_RB.velocity += Vector2.up * Physics2D.gravity.y * (fall_Multiplier - 1) * Time.deltaTime;
+                }
+                //not holding jump button
+                else if (entity_RB.velocity.y > 0 && !Input.GetButton("Jump"))
+                {
+                    entity_RB.velocity += Vector2.up * Physics2D.gravity.y * (low_Jump_Multiplier - 1) * Time.deltaTime;
+                }
             }
         }
     }

@@ -16,24 +16,29 @@ public class BaseGun : Gun
 
     internal ShopManager the_SM;
     internal ObjectPoolBullet the_OPB;
+    PlayerManager the_Player_Manager;
 
     private void Start()
     {
         the_OPB =FindObjectOfType<ObjectPoolBullet>();
         the_SM = FindObjectOfType<ShopManager>();
+        the_Player_Manager = FindObjectOfType<PlayerManager>();
         bullet_Left = gun_Ammo_Capacity[0];
     }
 
     public virtual void Update()
     {
-        if (bullet_Left > 0 && !reloading)
+        if (!the_Player_Manager.repairing_Truck)
         {
-            //if (Input.GetMouseButton(0) && Time.time >= next_Time_To_Fire)
-            if (Input.GetMouseButtonDown(0))
+            if (bullet_Left > 0 && !reloading)
             {
-                if (the_SM.shop_Open == false)
+                //if (Input.GetMouseButton(0) && Time.time >= next_Time_To_Fire)
+                if (Input.GetMouseButtonDown(0))
                 {
-                    Shooting();
+                    if (the_SM.shop_Open == false)
+                    {
+                        Shooting();
+                    }
                 }
             }
         }

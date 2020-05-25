@@ -5,22 +5,25 @@ using UnityEngine;
 public class BaseAI : BasicStates
 {
 
-    PlayerManager the_Player;
-
+    internal PlayerManager the_Player;
 
     private void Start()
     {
         the_Player = FindObjectOfType<PlayerManager>();
     }
 
-    private void FixedUpdate()
+    public virtual void FixedUpdate()
     {
-        if ((Vector3.Distance(the_Player.transform.position,transform.position) > 0.1f))
+        ChasePlayer();
+    }
+    internal void ChasePlayer()
+    {
+        if ((Vector3.Distance(the_Player.transform.position, transform.position) > 0.1f))
         {
-            transform.position = Vector3.MoveTowards(transform.position, the_Player.transform.position, entity_Speed);
+            Vector2 target = new Vector2(the_Player.transform.position.x + 1.5f, transform.position.y);
+            transform.position = Vector2.MoveTowards(transform.position, target, entity_Speed);
         }
     }
-
     public void TakeDamage(float damage)
     {
         entity_Health -= damage;

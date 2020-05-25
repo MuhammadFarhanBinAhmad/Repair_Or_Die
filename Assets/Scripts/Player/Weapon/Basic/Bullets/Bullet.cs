@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<BaseAI>() != null)
         {
