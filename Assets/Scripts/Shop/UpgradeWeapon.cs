@@ -15,13 +15,14 @@ public class UpgradeWeapon : MonoBehaviour
     public int weapon_Number;
 
     public BaseGun upgrable_Weapon;
-    public PlayerManager the_Player_Manager;
-
+    PlayerManager the_Player_Manager;
+    PlayerUI the_Player_UI;
     public stats the_Stats;
 
     private void Start()
     {
         the_Player_Manager = FindObjectOfType<PlayerManager>();
+        the_Player_UI = FindObjectOfType<PlayerUI>();
     }
 
     public void UnlockWeapon()
@@ -30,9 +31,9 @@ public class UpgradeWeapon : MonoBehaviour
         {
             if (!the_Player_Manager.weapon_Unlock[weapon_Number])
             {
-                print(weapon_Number);
                 the_Player_Manager.weapon_Unlock[weapon_Number] = true;
                 the_Player_Manager.total_Money -= the_Stats.buying_Price;
+                the_Player_UI.UpdateMoneyUI();
             }
         }  
     }
@@ -46,6 +47,7 @@ public class UpgradeWeapon : MonoBehaviour
                 {
                     upgrable_Weapon.current_Damage_Level++;
                     the_Player_Manager.total_Money -= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level];
+                    the_Player_UI.UpdateMoneyUI();
                 }
             }
         }
@@ -60,6 +62,7 @@ public class UpgradeWeapon : MonoBehaviour
                 {
                     upgrable_Weapon.current_Ammo_Level++;
                     the_Player_Manager.total_Money -= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level];
+                    the_Player_UI.UpdateMoneyUI();
                 }
             }
         }

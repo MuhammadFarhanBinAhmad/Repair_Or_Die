@@ -129,7 +129,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -312,3 +312,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity_Health_Bar: {fileID: 113703301}
+  damage_UI: {fileID: 4019723226874878262, guid: 2e239b0fc75989042b9435ee4d9eda77,
+    type: 3}

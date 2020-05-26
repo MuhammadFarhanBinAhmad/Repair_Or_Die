@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BaseAI : BasicStates
 {
-
     internal PlayerManager the_Player;
+    EnemyUI entity_UI;
 
     private void Start()
     {
         the_Player = FindObjectOfType<PlayerManager>();
+        entity_UI = GetComponent<EnemyUI>();
     }
 
     public virtual void FixedUpdate()
@@ -27,9 +28,11 @@ public class BaseAI : BasicStates
     public void TakeDamage(float damage)
     {
         entity_Health -= damage;
+        entity_UI.TakeDamageUI(damage);
         if (entity_Health <= 0)
         {
             the_Player.MoneyEarn(Random.Range(entity_Min_Money, entity_Max_Money));
+            FindObjectOfType<PlayerUI>().UpdateMoneyUI();
             DestroyEntity();
         }
     }
@@ -38,6 +41,7 @@ public class BaseAI : BasicStates
         if (other.GetComponent<PlayerManager>() != null)
         {
             the_Player.TakingDamage(entity_Damage);
+            FindObjectOfType<PlayerUI>().UpdateHealthUI();
             the_Player.StartCoroutine("CurrentlyHit");
         }
     }

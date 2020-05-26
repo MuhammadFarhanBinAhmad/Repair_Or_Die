@@ -26,10 +26,15 @@ public class PlayerManager : BasicStates
     public ShopManager the_Shop_Manager;
     //Money
     public int total_Money;
+    //UI
+    PlayerUI the_Player_UI;
 
     private void Start()
     {
         entity_RB = GetComponent<Rigidbody2D>();
+        the_Player_UI = FindObjectOfType<PlayerUI>();
+
+        the_Player_UI.UpdateMoneyUI();
         weapon_Unlock[0] = true;
     }
 
@@ -93,9 +98,9 @@ public class PlayerManager : BasicStates
     }
     internal float TakingDamage(float damage)
     {
-        print(entity_Health);
         return entity_Health -= damage;
     }
+
     internal int MoneyEarn(int M)
     {
         return total_Money += M;

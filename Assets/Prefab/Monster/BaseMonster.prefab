@@ -199,6 +199,7 @@ MonoBehaviour:
   entity_BasicStates: {fileID: 11400000, guid: 024dd0da1ab84e94db38c414546c0cb0, type: 2}
   entity_Min_Money: 0
   entity_Max_Money: 0
+  entity_UI: {fileID: 0}
 --- !u!114 &8424081585729643911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity_Health_Bar: {fileID: 3773405155616631933}
+  damage_UI: {fileID: 4019723226874878262, guid: 2e239b0fc75989042b9435ee4d9eda77,
+    type: 3}
 --- !u!1 &5733844304750051963
 GameObject:
   m_ObjectHideFlags: 0
