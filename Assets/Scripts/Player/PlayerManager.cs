@@ -198,4 +198,15 @@ public class PlayerManager : BasicStates
             the_Shop_Manager = other.GetComponent<ShopManager>();
         }
     }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.GetComponent<TruckManager>() != null)
+        {
+            the_Truck_Manager = null;
+        }
+        if (other.GetComponent<ShopManager>() != null)
+        {
+            the_Shop_Manager = null;
+        }
+    }
 }
