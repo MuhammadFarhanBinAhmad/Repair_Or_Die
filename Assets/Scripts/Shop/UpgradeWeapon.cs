@@ -17,11 +17,13 @@ public class UpgradeWeapon : MonoBehaviour
     public BaseGun upgrable_Weapon;
     PlayerManager the_Player_Manager;
     PlayerUI the_Player_UI;
+    UpgradeWeaponUI the_Upgrade_Weapon_UI;
     public stats the_Stats;
 
     private void Start()
     {
         the_Player_Manager = FindObjectOfType<PlayerManager>();
+        the_Upgrade_Weapon_UI = GetComponent<UpgradeWeaponUI>();
         the_Player_UI = FindObjectOfType<PlayerUI>();
     }
 
@@ -47,6 +49,7 @@ public class UpgradeWeapon : MonoBehaviour
                 {
                     upgrable_Weapon.current_Damage_Level++;
                     the_Player_Manager.total_Money -= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level];
+                    the_Upgrade_Weapon_UI.UpdateDamageCostUI();
                     the_Player_UI.UpdateMoneyUI();
                 }
             }
@@ -63,6 +66,7 @@ public class UpgradeWeapon : MonoBehaviour
                     upgrable_Weapon.current_Ammo_Level++;
                     the_Player_Manager.total_Money -= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level];
                     the_Player_UI.UpdateMoneyUI();
+                    the_Upgrade_Weapon_UI.UpdateAmmoCostUI();
                 }
             }
         }

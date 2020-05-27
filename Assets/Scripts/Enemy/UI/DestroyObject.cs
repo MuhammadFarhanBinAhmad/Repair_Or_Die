@@ -7,11 +7,11 @@ public class DestroyObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Destroy", 3);   
+        Invoke("Destroy", 2);   
     }
     private void FixedUpdate()
     {
-        transform.Translate(Vector2.up * 1.5f);
+        transform.Translate(Vector2.up * 1);
     }
     private void Destroy()
     {

@@ -43,5 +43,9 @@ public class Bullet : MonoBehaviour
             other.GetComponent<BaseAI>().TakeDamage(damage);
             Destroy();
         }
+        if (other.gameObject.layer == 8)
+        {
+            Destroy();
+        }
     }
 }

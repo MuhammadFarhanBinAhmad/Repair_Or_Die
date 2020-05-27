@@ -28,4 +28,5 @@ public class EnemyUI : MonoBehaviour
         UI.transform.parent = entity_Canvas.transform;
         UI.GetComponent<TextMeshProUGUI>().text = "-"+i.ToString();
     }
+
 }

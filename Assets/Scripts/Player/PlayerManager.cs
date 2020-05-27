@@ -33,7 +33,6 @@ public class PlayerManager : BasicStates
     {
         entity_RB = GetComponent<Rigidbody2D>();
         the_Player_UI = FindObjectOfType<PlayerUI>();
-
         the_Player_UI.UpdateMoneyUI();
         weapon_Unlock[0] = true;
     }
@@ -70,20 +69,24 @@ public class PlayerManager : BasicStates
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             NewWeapon(0);
+            the_Player_UI.UpdateAmmoUI(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             NewWeapon(1);
+            the_Player_UI.UpdateAmmoUI(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             NewWeapon(2);
+            the_Player_UI.UpdateAmmoUI(2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             NewWeapon(3);
+            the_Player_UI.UpdateAmmoUI(3);
         }
-        
+
     }
     internal bool isGrounded()
     {

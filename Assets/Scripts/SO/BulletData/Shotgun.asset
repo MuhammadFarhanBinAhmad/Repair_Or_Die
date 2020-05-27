@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   damage: 5
-  speed: 12000
+  speed: 9000
   destroy_Time: 5

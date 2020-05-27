@@ -18,7 +18,7 @@ public class BaseGun : Gun
     internal ObjectPoolBullet the_OPB;
     PlayerManager the_Player_Manager;
 
-    private void Start()
+    private void Awake()
     {
         the_OPB =FindObjectOfType<ObjectPoolBullet>();
         the_SM = FindObjectOfType<ShopManager>();

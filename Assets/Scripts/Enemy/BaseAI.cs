@@ -31,7 +31,8 @@ public class BaseAI : BasicStates
         entity_UI.TakeDamageUI(damage);
         if (entity_Health <= 0)
         {
-            the_Player.MoneyEarn(Random.Range(entity_Min_Money, entity_Max_Money));
+            int M = Random.Range(entity_Min_Money, entity_Max_Money);
+            the_Player.MoneyEarn(M);
             FindObjectOfType<PlayerUI>().UpdateMoneyUI();
             DestroyEntity();
         }
