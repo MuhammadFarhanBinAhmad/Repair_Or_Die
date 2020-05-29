@@ -45,7 +45,7 @@ public class UpgradeWeapon : MonoBehaviour
         {
             if (the_Player_Manager.total_Money >= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level])
             {
-                if (upgrable_Weapon.current_Damage_Level <= upgrable_Weapon.damage_Multiplier.Length)
+                if (upgrable_Weapon.current_Damage_Level <= upgrable_Weapon.damage_Multiplier.Length-1)
                 {
                     upgrable_Weapon.current_Damage_Level++;
                     the_Player_Manager.total_Money -= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level];
@@ -59,9 +59,9 @@ public class UpgradeWeapon : MonoBehaviour
     {
         if (the_Player_Manager.weapon_Unlock[weapon_Number])
         {
-            if (the_Player_Manager.total_Money >= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level])
+            if (upgrable_Weapon.current_Ammo_Level <= upgrable_Weapon.gun_Ammo_Capacity.Length - 1)
             {
-                if (upgrable_Weapon.current_Ammo_Level <= upgrable_Weapon.gun_Ammo_Capacity.Length)
+                if (the_Player_Manager.total_Money >= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level])
                 {
                     upgrable_Weapon.current_Ammo_Level++;
                     the_Player_Manager.total_Money -= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level];

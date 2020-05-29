@@ -31,7 +31,6 @@ public class Bullet : MonoBehaviour
         damage = the_Bullet_Stats.damage;
         CancelInvoke();
     }
-
     void Destroy()
     {
         gameObject.SetActive(false);

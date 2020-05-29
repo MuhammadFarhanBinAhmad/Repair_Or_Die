@@ -6,14 +6,7 @@ public class MachineGun : BaseGun
 {
     public override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            current_Ammo_Level++;
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            current_Damage_Level++;
-        }
+
         if (bullet_Left > 0 && !reloading)
         {
             if (Input.GetMouseButton(0) && Time.time >= next_Time_To_Fire)

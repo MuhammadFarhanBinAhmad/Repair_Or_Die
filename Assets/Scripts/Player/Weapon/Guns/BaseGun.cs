@@ -12,17 +12,21 @@ public class BaseGun : Gun
     public int current_Damage_Level;
     public int current_Ammo_Level;
 
+    public bool reloading;
+
     public SO_BulletStates the_Bullet_Data;
 
     internal ShopManager the_SM;
     internal ObjectPoolBullet the_OPB;
-    PlayerManager the_Player_Manager;
+    internal PlayerManager the_Player_Manager;
+    internal PlayerUI the_Player_UI;
 
     private void Awake()
     {
         the_OPB =FindObjectOfType<ObjectPoolBullet>();
         the_SM = FindObjectOfType<ShopManager>();
         the_Player_Manager = FindObjectOfType<PlayerManager>();
+        the_Player_UI = FindObjectOfType<PlayerUI>();
         bullet_Left = gun_Ammo_Capacity[0];
     }
 
@@ -67,6 +71,7 @@ public class BaseGun : Gun
                 the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data; 
                 the_OPB.bullet_List[i].SetActive(true);
                 DamageLevel(current_i);
+                the_Player_UI.RemoveAmmoUI();
                 bullet_Left--;
                 break;
             }
@@ -157,5 +162,6 @@ public class BaseGun : Gun
                 }
         }
         reloading = false;
+        the_Player_UI.UpdateAmmoUI(the_Player_Manager.current_Weapon);
     }
 }

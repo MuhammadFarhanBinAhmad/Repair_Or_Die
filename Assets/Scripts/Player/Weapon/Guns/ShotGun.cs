@@ -20,6 +20,7 @@ public class ShotGun : BaseGun
                     the_OPB.bullet_List[i].transform.rotation = q;
                     the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data;
                     the_OPB.bullet_List[i].SetActive(true);
+                    the_Player_UI.RemoveAmmoUI();
                     DamageLevel(current_i);
                     bullet_Left--;
                     break;

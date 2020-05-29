@@ -12,8 +12,6 @@ public class Gun : MonoBehaviour
     internal float next_Time_To_Fire = 0;
     //public int bullet_Left;
     public float reload_Time;
-    internal bool reloading;
-
     public void FixedUpdate()
     {
         Vector3 mousePos = Input.mousePosition;

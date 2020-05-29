@@ -35,6 +35,8 @@ public class BaseAI : BasicStates
             the_Player.MoneyEarn(M);
             FindObjectOfType<PlayerUI>().UpdateMoneyUI();
             DestroyEntity();
+            FindObjectOfType<EnemySpawnManager>().total_Enemy_Left--;
+            FindObjectOfType<EnemySpawnManager>().StartCoroutine("WaveEnded");
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

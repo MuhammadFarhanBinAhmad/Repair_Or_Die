@@ -19,7 +19,7 @@ public class PlayerManager : BasicStates
     //Weapons
     public bool[] weapon_Unlock = new bool[4];
     public GameObject[] weapons = new GameObject[3];
-    int current_Weapon;
+    internal int current_Weapon;
     //Interaction
     internal bool repairing_Truck;
     TruckManager the_Truck_Manager;
@@ -68,25 +68,30 @@ public class PlayerManager : BasicStates
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            NewWeapon(0);
-            the_Player_UI.UpdateAmmoUI(0);
+            ChangeWeapon(0);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            NewWeapon(1);
-            the_Player_UI.UpdateAmmoUI(1);
+            ChangeWeapon(1);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            NewWeapon(2);
-            the_Player_UI.UpdateAmmoUI(2);
+            ChangeWeapon(2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            NewWeapon(3);
-            the_Player_UI.UpdateAmmoUI(3);
+            ChangeWeapon(3);
         }
 
+    }
+    void ChangeWeapon(int i)
+    {
+        if (weapon_Unlock[i])
+        {
+            weapons[current_Weapon].GetComponent<BaseGun>().reloading = false;
+            NewWeapon(i);
+            the_Player_UI.UpdateAmmoUI(i);
+        }
     }
     internal bool isGrounded()
     {

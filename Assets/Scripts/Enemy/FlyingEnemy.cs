@@ -46,6 +46,7 @@ public class FlyingEnemy : BaseAI
             the_Player.TakingDamage(entity_Damage);
             the_Player.StartCoroutine("CurrentlyHit");
             Destroy(gameObject);
+            FindObjectOfType<EnemySpawnManager>().total_Enemy_Left--;
         }
     }
 }

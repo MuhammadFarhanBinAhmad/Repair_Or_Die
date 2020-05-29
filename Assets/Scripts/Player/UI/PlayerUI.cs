@@ -13,10 +13,11 @@ public class PlayerUI : MonoBehaviour
     public Image player_Health_Bar;
     //Ammo
     [Header("Ammo")]
-    public TextMeshProUGUI Ammo;
     public GameObject ammo_Image;
     public GameObject player_Canvas;
+    public Transform bullet_Starting_Trans;
     internal List<GameObject> ammo_UI = new List<GameObject>();
+    public List<GameObject> current_Ammo_UI = new List<GameObject>();
     public int ammo_Pool_Amount;
     //Money 
     [Header("Money")]
@@ -30,6 +31,7 @@ public class PlayerUI : MonoBehaviour
             ammo_UI.Add(O);
             O.SetActive(false);
             GameObject.DontDestroyOnLoad(O);
+            O.transform.parent = player_Canvas.transform;
         }
         the_Player_Manager = FindObjectOfType<PlayerManager>();
         UpdateAmmoUI(0);
@@ -40,32 +42,38 @@ public class PlayerUI : MonoBehaviour
     }
     public void UpdateMoneyUI()
     {
-        Money.text = "$"+the_Player_Manager.total_Money.ToString();
+        Money.text = "$"+ FindObjectOfType<PlayerManager>().total_Money.ToString();
     }
     public void UpdateAmmoUI(int AM)
     {
-
+        for (int i = 0; i <= ammo_Pool_Amount; i++)
+        {
+            ammo_UI[i].SetActive(false);
+        }
+        current_Ammo_UI.Clear();
         for (int i = 0; i <= the_Player_Manager.weapons[AM].GetComponent<BaseGun>().bullet_Left-1; i++)
         {
             //if (!ammo_UI[i].activeInHierarchy)
             {
-                /*
-                the_OPB.bullet_List[i].transform.position = spawn_Point.position;
-                the_OPB.bullet_List[i].transform.rotation = spawn_Point.rotation;
-                the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data;
-                the_OPB.bullet_List[i].SetActive(true);
-                DamageLevel(current_i);
-                bullet_Left--;
-                break;*/
-                /*ammo_UI[i].transform.parent = player_Canvas.transform;
-                ammo_UI[i].transform.position = player_Canvas.transform.position;
-                ammo_UI[i].transform.rotation = player_Canvas.transform.rotation;*/
+
                 ammo_UI[i].SetActive(true);
-                ammo_UI[i].transform.parent = player_Canvas.transform;
-                ammo_UI[i].transform.position = player_Canvas.transform.position;
+                if (i == 0)
+                {
+                    ammo_UI[i].transform.position = bullet_Starting_Trans.transform.position;
+                }
+                else
+                {
+                    ammo_UI[i].transform.position = new Vector2(ammo_UI[i - 1].transform.position.x + 20, ammo_UI[i - 1].transform.position.y);
+                }
                 ammo_UI[i].transform.rotation = player_Canvas.transform.rotation;
+                current_Ammo_UI.Add(ammo_UI[i]);
                 //break;
             }
         }
+    }
+    public void RemoveAmmoUI()
+    {
+        current_Ammo_UI[current_Ammo_UI.Count - 1].SetActive(false);
+        current_Ammo_UI.Remove(current_Ammo_UI[current_Ammo_UI.Count - 1]);
     }
 }
