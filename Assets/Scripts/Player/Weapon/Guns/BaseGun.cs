@@ -36,7 +36,6 @@ public class BaseGun : Gun
         {
             if (bullet_Left > 0 && !reloading)
             {
-                //if (Input.GetMouseButton(0) && Time.time >= next_Time_To_Fire)
                 if (Input.GetMouseButtonDown(0))
                 {
                     if (the_SM.shop_Open == false)

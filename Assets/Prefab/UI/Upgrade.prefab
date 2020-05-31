@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 99.4, y: 0}
-  m_SizeDelta: {x: 78.54701, y: 17.2}
+  m_AnchoredPosition: {x: 109.2, y: -0.00027466}
+  m_SizeDelta: {x: 143.9, y: 17.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1991868991021150742
 CanvasRenderer:
@@ -189,8 +189,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000012398, y: 29.102}
-  m_SizeDelta: {x: 60, y: 28.205}
+  m_AnchoredPosition: {x: -0.0000038146973, y: 29.099985}
+  m_SizeDelta: {x: 96.32, y: 28.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3964348822572957599
 CanvasRenderer:
@@ -1228,6 +1228,7 @@ MonoBehaviour:
   buy_Cost: {fileID: 4501764956557515600}
   ammo_Cost: {fileID: 3370041538250975114}
   damage_Cost: {fileID: 3866264047966315317}
+  buy_Button: {fileID: 5763411322078385639}
 --- !u!1 &5656706935470862817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,8 +1263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83.5, y: 0}
-  m_SizeDelta: {x: 78.54701, y: 17.2}
+  m_AnchoredPosition: {x: 93.9, y: 0}
+  m_SizeDelta: {x: 139.15, y: 17.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5869801615395569422
 CanvasRenderer:
@@ -1497,14 +1498,14 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 4605264997323698534}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: UnlockWeapon
-        m_Mode: 3
+      - m_Target: {fileID: 3896578281499526742}
+        m_MethodName: BoughtWeapon
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

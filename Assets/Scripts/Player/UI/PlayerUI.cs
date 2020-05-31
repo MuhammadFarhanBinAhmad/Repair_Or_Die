@@ -15,6 +15,7 @@ public class PlayerUI : MonoBehaviour
     [Header("Ammo")]
     public GameObject ammo_Image;
     public GameObject player_Canvas;
+    public GameObject the_Reloading_Text;
     public Transform bullet_Starting_Trans;
     internal List<GameObject> ammo_UI = new List<GameObject>();
     public List<GameObject> current_Ammo_UI = new List<GameObject>();
@@ -36,6 +37,17 @@ public class PlayerUI : MonoBehaviour
         the_Player_Manager = FindObjectOfType<PlayerManager>();
         UpdateAmmoUI(0);
     }
+    private void FixedUpdate()
+    {
+        if (the_Player_Manager.weapons[the_Player_Manager.current_Weapon].GetComponent<BaseGun>().reloading)
+        {
+            the_Reloading_Text.SetActive(true);
+        }
+        else
+        {
+            the_Reloading_Text.SetActive(false);
+        }
+    }
     public void UpdateHealthUI()
     {
         player_Health_Bar.fillAmount = the_Player_Manager.entity_Health / the_Player_Manager.entity_BasicStates.health;
@@ -53,9 +65,7 @@ public class PlayerUI : MonoBehaviour
         current_Ammo_UI.Clear();
         for (int i = 0; i <= the_Player_Manager.weapons[AM].GetComponent<BaseGun>().bullet_Left-1; i++)
         {
-            //if (!ammo_UI[i].activeInHierarchy)
             {
-
                 ammo_UI[i].SetActive(true);
                 if (i == 0)
                 {
@@ -63,7 +73,7 @@ public class PlayerUI : MonoBehaviour
                 }
                 else
                 {
-                    ammo_UI[i].transform.position = new Vector2(ammo_UI[i - 1].transform.position.x + 20, ammo_UI[i - 1].transform.position.y);
+                    ammo_UI[i].transform.position = new Vector2(ammo_UI[i - 1].transform.position.x + 17.5f, ammo_UI[i - 1].transform.position.y);
                 }
                 ammo_UI[i].transform.rotation = player_Canvas.transform.rotation;
                 current_Ammo_UI.Add(ammo_UI[i]);

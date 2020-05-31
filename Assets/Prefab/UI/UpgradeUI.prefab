@@ -84,15 +84,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5304859933300154284}
     m_Modifications:
+    - target: {fileID: 4605264997323698534, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605264997323698534, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605264997323698534, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
       propertyPath: the_Stats.damage_Upgrade_Cost.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
       propertyPath: the_Stats.ammo_Upgrade_Cost.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
@@ -128,6 +143,16 @@ PrefabInstance:
         type: 3}
       propertyPath: the_Stats.weapon_Number
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.data[3]
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.data[3]
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941302, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
@@ -343,8 +368,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
       propertyPath: the_Stats.weapon_Number
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.data[3]
+      value: 1450
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.data[3]
+      value: 1100
       objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941302, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
@@ -460,11 +505,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 952248770981534783}
+      objectReference: {fileID: 2867471073745008149}
     - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UnlockWeapon
+      value: BoughtWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
@@ -479,6 +524,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1285813919886045251}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2867471073745008149 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3896578281499526742, guid: 87a9e0c872b9be44fa2840af5248395e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1285813919886045251}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e02093773e24f42be9b55fc56a1bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4940428496414372750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -486,6 +543,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5304859933300154284}
     m_Modifications:
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.data[3]
+      value: 1600
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.data[3]
+      value: 1200
+      objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941302, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -600,11 +677,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 952248770981534783}
+      objectReference: {fileID: 8258617412815353304}
     - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UnlockWeapon
+      value: BoughtWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
@@ -619,16 +696,16 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4940428496414372750}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &952248770981534783 stripped
+--- !u!114 &8258617412815353304 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+  m_CorrespondingSourceObject: {fileID: 3896578281499526742, guid: 87a9e0c872b9be44fa2840af5248395e,
     type: 3}
   m_PrefabInstance: {fileID: 4940428496414372750}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191a9a3a531672f45852332479fb5fcb, type: 3}
+  m_Script: {fileID: 11500000, guid: 04e02093773e24f42be9b55fc56a1bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8328934053384916158
@@ -705,8 +782,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
       propertyPath: the_Stats.weapon_Number
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.damage_Upgrade_Cost.Array.data[3]
+      value: 1450
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: the_Stats.ammo_Upgrade_Cost.Array.data[3]
+      value: 1150
       objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941302, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
@@ -822,11 +919,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4192479448022344463}
+      objectReference: {fileID: 5009476310764980968}
     - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UnlockWeapon
+      value: BoughtWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
@@ -841,15 +938,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8328934053384916158}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4192479448022344463 stripped
+--- !u!114 &5009476310764980968 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
+  m_CorrespondingSourceObject: {fileID: 3896578281499526742, guid: 87a9e0c872b9be44fa2840af5248395e,
     type: 3}
   m_PrefabInstance: {fileID: 8328934053384916158}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 191a9a3a531672f45852332479fb5fcb, type: 3}
+  m_Script: {fileID: 11500000, guid: 04e02093773e24f42be9b55fc56a1bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

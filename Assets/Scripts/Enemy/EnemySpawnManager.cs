@@ -25,9 +25,10 @@ public class EnemySpawnManager : MonoBehaviour
     //Waves
     [Header("Wave Component")]
     public List<WaveComponents> current_Amount_Of_Enemy_Spawn = new List<WaveComponents>();
+    public List<GameObject> test = new List<GameObject>();
     public Transform spawn_Pos;
-    public int total_Enemy_Left;
-    int enemy_Left_To_Spawn;
+    internal int total_Enemy_Left;
+    internal int enemy_Left_To_Spawn;
 
     private void Start()
     {
@@ -40,7 +41,6 @@ public class EnemySpawnManager : MonoBehaviour
         if (enemy_Left_To_Spawn > 0)
         {
             RandomValue();
-            print("SpawningEnemy");
         }
     }
     void RandomValue()
@@ -49,20 +49,17 @@ public class EnemySpawnManager : MonoBehaviour
         if (current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type_To_Spawn[R] > 0)
         {
             SpawningEnemy(R);
-            print("GiveRandomValue");
         }
         else
         {
             RandomValue();
         }
-
     }
     void SpawningEnemy(int RV)
     {
         Instantiate(current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type[RV], spawn_Pos.transform.position, spawn_Pos.transform.rotation);
         current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type_To_Spawn[RV]--;
         enemy_Left_To_Spawn--;
-        print("EnemySpawn");
         StartCoroutine("StartSpawningEnemy");
     }
     IEnumerator WaveEnded()
@@ -71,20 +68,29 @@ public class EnemySpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(5);
             current_Wave++;
+            if (current_Wave >= 10)
+            {
+                current_Amount_Of_Enemy_Spawn.Add(null);
+                CreateNewWave();
+            }
             CountTotalEnemy();
-            print("StartNewWave");
             StartCoroutine("StartSpawningEnemy");
+        }
+    }
+    void CreateNewWave()
+    {
+        for (int i = 0; i <= 3; i++)
+        {
+            current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type.Add(current_Amount_Of_Enemy_Spawn[1].enemy_Type[i]);
+            current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type_To_Spawn.Add(Random.Range(10,20));
         }
     }
     void CountTotalEnemy()
     {
-        total_Enemy_Left =
-current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type_To_Spawn[0]
-+ current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type_To_Spawn[1]
-+ current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type_To_Spawn[2]
-+ current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type_To_Spawn[3];
+        for (int i = 0; i <= current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type_To_Spawn.Count-1; i++)
+        {
+            total_Enemy_Left += current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type_To_Spawn[i];
+        }
         enemy_Left_To_Spawn = total_Enemy_Left;
     }
-
-
 }

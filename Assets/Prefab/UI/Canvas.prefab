@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3251620463976485077
 RectTransform:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
       propertyPath: the_Stats.buying_Price
-      value: 100
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
@@ -339,6 +339,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149286343721132022, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149286343721132022, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6813972955615450383}
+    - target: {fileID: 1149286343721132022, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 1208143344863112789, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
@@ -525,6 +540,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3906089761044216176, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: buy_Cost
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3994770316878815194, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -554,6 +574,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101276472984199366, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4101276472984199366, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7604790466848270911}
+    - target: {fileID: 4101276472984199366, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 4192479446533309952, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
@@ -620,6 +655,11 @@ PrefabInstance:
       propertyPath: weapon_Number
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4192479448022344463, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: the_Stats.buying_Price
+      value: 1900
+      objectReference: {fileID: 0}
     - target: {fileID: 4294994716004853306, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -653,7 +693,7 @@ PrefabInstance:
     - target: {fileID: 4494348182023906422, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4494348182023906422, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
@@ -664,6 +704,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4494348182023906422, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4494348182023906422, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_text
+      value: Sold
       objectReference: {fileID: 0}
     - target: {fileID: 4547767142263412681, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
@@ -1035,6 +1085,11 @@ PrefabInstance:
       propertyPath: weapon_Number
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6368332102493642738, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: the_Stats.buying_Price
+      value: 1750
+      objectReference: {fileID: 0}
     - target: {fileID: 6368332102493642739, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1129,6 +1184,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907586751757181707, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907586751757181707, guid: 847f2151227258f45a5cf7f71eb9137c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 7984089976085652983, guid: 847f2151227258f45a5cf7f71eb9137c,
         type: 3}
@@ -1328,9 +1393,33 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7259439303001683456}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7604790466848270911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 952248770981534783, guid: 847f2151227258f45a5cf7f71eb9137c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7259439303001683456}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191a9a3a531672f45852332479fb5fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4386059476813556210 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6368332102493642738, guid: 847f2151227258f45a5cf7f71eb9137c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7259439303001683456}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191a9a3a531672f45852332479fb5fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6813972955615450383 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4192479448022344463, guid: 847f2151227258f45a5cf7f71eb9137c,
     type: 3}
   m_PrefabInstance: {fileID: 7259439303001683456}
   m_PrefabAsset: {fileID: 0}

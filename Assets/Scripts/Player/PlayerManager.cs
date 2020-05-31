@@ -82,7 +82,6 @@ public class PlayerManager : BasicStates
         {
             ChangeWeapon(3);
         }
-
     }
     void ChangeWeapon(int i)
     {

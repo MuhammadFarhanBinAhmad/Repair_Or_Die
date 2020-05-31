@@ -136,6 +136,8 @@ MonoBehaviour:
   - 1.5
   - 2.5
   - 4
+  - 5
   current_Damage_Level: 0
   current_Ammo_Level: 0
+  reloading: 0
   the_Bullet_Data: {fileID: 11400000, guid: 080f874fab87e6841a7980e446fd5efb, type: 2}

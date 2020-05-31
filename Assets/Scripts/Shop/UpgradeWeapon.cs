@@ -13,7 +13,6 @@ public class stats
 public class UpgradeWeapon : MonoBehaviour
 {
     public int weapon_Number;
-
     public BaseGun upgrable_Weapon;
     PlayerManager the_Player_Manager;
     PlayerUI the_Player_UI;
@@ -35,6 +34,7 @@ public class UpgradeWeapon : MonoBehaviour
             {
                 the_Player_Manager.weapon_Unlock[weapon_Number] = true;
                 the_Player_Manager.total_Money -= the_Stats.buying_Price;
+                the_Upgrade_Weapon_UI.BoughtWeapon();
                 the_Player_UI.UpdateMoneyUI();
             }
         }  
@@ -43,9 +43,9 @@ public class UpgradeWeapon : MonoBehaviour
     {
         if (the_Player_Manager.weapon_Unlock[weapon_Number])
         {
-            if (the_Player_Manager.total_Money >= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level])
+            if (upgrable_Weapon.current_Damage_Level <= upgrable_Weapon.damage_Multiplier.Length - 1)
             {
-                if (upgrable_Weapon.current_Damage_Level <= upgrable_Weapon.damage_Multiplier.Length-1)
+                if (the_Player_Manager.total_Money >= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level])
                 {
                     upgrable_Weapon.current_Damage_Level++;
                     the_Player_Manager.total_Money -= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level];
@@ -59,7 +59,7 @@ public class UpgradeWeapon : MonoBehaviour
     {
         if (the_Player_Manager.weapon_Unlock[weapon_Number])
         {
-            if (upgrable_Weapon.current_Ammo_Level <= upgrable_Weapon.gun_Ammo_Capacity.Length - 1)
+            if (upgrable_Weapon.current_Ammo_Level < upgrable_Weapon.gun_Ammo_Capacity.Length - 1)
             {
                 if (the_Player_Manager.total_Money >= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level])
                 {
