@@ -889,7 +889,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5312273648366122871}
   m_OnClick:
     m_PersistentCalls:
@@ -1019,7 +1019,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5312273648945723882}
   m_OnClick:
     m_PersistentCalls:
@@ -1229,6 +1229,8 @@ MonoBehaviour:
   ammo_Cost: {fileID: 3370041538250975114}
   damage_Cost: {fileID: 3866264047966315317}
   buy_Button: {fileID: 5763411322078385639}
+  ammo_Button: {fileID: 5312273648366122858}
+  damage_Button: {fileID: 5312273648945723881}
 --- !u!1 &5656706935470862817
 GameObject:
   m_ObjectHideFlags: 0

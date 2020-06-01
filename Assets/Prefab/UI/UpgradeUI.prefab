@@ -99,6 +99,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5312273648366122868, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312273648945723883, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5312273649075941297, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
       propertyPath: the_Stats.damage_Upgrade_Cost.Array.size
@@ -273,6 +283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UnlockWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a9e0c872b9be44fa2840af5248395e, type: 3}
@@ -516,6 +531,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a9e0c872b9be44fa2840af5248395e, type: 3}
 --- !u!224 &6368332102493642741 stripped
@@ -686,6 +706,11 @@ PrefabInstance:
     - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -929,6 +954,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963646172147028808, guid: 87a9e0c872b9be44fa2840af5248395e,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a9e0c872b9be44fa2840af5248395e, type: 3}

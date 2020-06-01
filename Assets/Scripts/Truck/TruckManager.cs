@@ -4,7 +4,7 @@ public class TruckManager : MonoBehaviour
 {
     public float truck_Health;
     TruckUI the_Truck_UI;
-    bool end_Game;
+    public bool end_Game;
     private void Start()
     {
         the_Truck_UI = FindObjectOfType<TruckUI>();
@@ -16,6 +16,7 @@ public class TruckManager : MonoBehaviour
         if(truck_Health >= 100)
         {
             end_Game = true;
+            truck_Health = 100;
         }
     }
 }

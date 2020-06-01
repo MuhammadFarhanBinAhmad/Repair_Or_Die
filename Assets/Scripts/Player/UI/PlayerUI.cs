@@ -13,6 +13,7 @@ public class PlayerUI : MonoBehaviour
     public Image player_Health_Bar;
     //Ammo
     [Header("Ammo")]
+    public List<GameObject> gun_Images = new List<GameObject>();
     public GameObject ammo_Image;
     public GameObject player_Canvas;
     public GameObject the_Reloading_Text;
@@ -58,6 +59,11 @@ public class PlayerUI : MonoBehaviour
     }
     public void UpdateAmmoUI(int AM)
     {
+        for (int i = 0; i <= gun_Images.Count-1 ;i++)
+        {
+            gun_Images[i].SetActive(false);
+        }
+        gun_Images[AM].SetActive(true);
         for (int i = 0; i <= ammo_Pool_Amount; i++)
         {
             ammo_UI[i].SetActive(false);
@@ -73,8 +79,18 @@ public class PlayerUI : MonoBehaviour
                 }
                 else
                 {
-                    ammo_UI[i].transform.position = new Vector2(ammo_UI[i - 1].transform.position.x + 17.5f, ammo_UI[i - 1].transform.position.y);
+                    ammo_UI[i].transform.position = new Vector2(ammo_UI[i - 1].transform.position.x + 10, ammo_UI[i - 1].transform.position.y);
+                    if (ammo_UI[i].transform.position.x >= bullet_Starting_Trans.transform.position.x + 375)
+                    {
+                        if (ammo_UI[i].transform.position.x != bullet_Starting_Trans.transform.position.x)
+                        {
+                            ammo_UI[i].transform.position = new Vector2(bullet_Starting_Trans.transform.position.x, ammo_UI[i - 1].transform.position.y - 10);
+                        }
+                        else
+                        ammo_UI[i].transform.position = new Vector2(ammo_UI[i - 1].transform.position.x + 10, ammo_UI[i - 1].transform.position.y - 10);
+                    }
                 }
+
                 ammo_UI[i].transform.rotation = player_Canvas.transform.rotation;
                 current_Ammo_UI.Add(ammo_UI[i]);
                 //break;

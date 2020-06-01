@@ -16,6 +16,13 @@ public class TruckUI : MonoBehaviour
     internal void TruckCurrentRepairUI()
     {
         truck_Repair.fillAmount = the_Truck_Manager.truck_Health / 100;
-        the_Current_Percentage.text = the_Truck_Manager.truck_Health.ToString("0.00") + "%" + "/" + "100%";
+        if (the_Truck_Manager.truck_Health <= 99.9f)
+        {
+            the_Current_Percentage.text = the_Truck_Manager.truck_Health.ToString("0.00") + "%" + "/" + "100%";
+        }
+        else
+        {
+            the_Current_Percentage.text = the_Truck_Manager.truck_Health.ToString("0") + " % " + "/" + "100%";
+        }
     }
 }

@@ -17,6 +17,12 @@ public class PlayerManager : BasicStates
     public float the_Knock_Back_Force;
     bool is_Hit;
     //Weapons
+    /// <summary>
+    /// 0 = Pistol
+    /// 1 = MachineGun
+    /// 2 = Sniper
+    /// 3 = Shotgun
+    /// </summary>
     public bool[] weapon_Unlock = new bool[4];
     public GameObject[] weapons = new GameObject[3];
     internal int current_Weapon;
@@ -40,7 +46,7 @@ public class PlayerManager : BasicStates
     private void Update()
     {
         PlayerMovement();
-        if (Input.GetKeyDown(KeyCode.Q) && the_Shop_Manager != null)
+        if (Input.GetKeyDown(KeyCode.Escape) && the_Shop_Manager != null)
         {
             if (the_Shop_Manager.shop_Open)
             {
@@ -203,6 +209,7 @@ public class PlayerManager : BasicStates
         if (other.GetComponent<ShopManager>() != null)
         {
             the_Shop_Manager = other.GetComponent<ShopManager>();
+            the_Shop_Manager.OpenPopUpUI();
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -213,6 +220,9 @@ public class PlayerManager : BasicStates
         }
         if (other.GetComponent<ShopManager>() != null)
         {
+            the_Shop_Manager.ClosePopUpUI();
+
+
             the_Shop_Manager = null;
         }
     }

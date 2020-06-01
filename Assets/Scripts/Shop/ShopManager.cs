@@ -5,7 +5,9 @@ using UnityEngine;
 public class ShopManager : MonoBehaviour
 {
     PlayerManager the_Player_Manager;
+
     public GameObject shop_UI;
+    public GameObject pop_Up_UI;
 
     public bool shop_Open;
     bool weapon_Bought;
@@ -26,5 +28,12 @@ public class ShopManager : MonoBehaviour
         shop_UI.SetActive(false);
         Time.timeScale = 1;
     }
-
+    public void OpenPopUpUI()
+    {
+        pop_Up_UI.SetActive(true);
+    }
+    public void ClosePopUpUI()
+    {
+        pop_Up_UI.SetActive(false);
+    }
 }
