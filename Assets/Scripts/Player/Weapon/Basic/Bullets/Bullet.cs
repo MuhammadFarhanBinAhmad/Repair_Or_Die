@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     public float damage;
     float destroy_Time;
 
+    public AudioClip gun_Sound;
+
     public SO_BulletStates the_Bullet_Stats;
 
     private void Awake()
@@ -40,7 +42,10 @@ public class Bullet : MonoBehaviour
         if (other.GetComponent<BaseAI>() != null)
         {
             other.GetComponent<BaseAI>().TakeDamage(damage);
-            Destroy();
+            if (FindObjectOfType<PlayerManager>().current_Weapon != 2)
+            {
+                Destroy();
+            }
         }
         if (other.gameObject.layer == 8)
         {

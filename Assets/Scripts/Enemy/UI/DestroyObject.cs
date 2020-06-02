@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
+
+    public float time;
+
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Destroy", .5f);   
+        Invoke("Destroy", time);   
     }
     private void FixedUpdate()
     {

@@ -59,6 +59,7 @@ MonoBehaviour:
   current_Damage_Level: 0
   current_Ammo_Level: 0
   reloading: 0
+  gun_Sound: {fileID: 8300000, guid: 53359c302b57537418d24ff42f18f0ff, type: 3}
   the_Bullet_Data: {fileID: 11400000, guid: d680016877a1db94586ad6f026b2b1a3, type: 2}
 --- !u!1 &8816468842000845756
 GameObject:

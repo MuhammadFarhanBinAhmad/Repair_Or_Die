@@ -6,24 +6,29 @@ public class ShotGun : BaseGun
 {
     public override void Shooting()
     {
+        base.Shooting();
         int current_i = 0;
-        for (int CL = 0; CL < 5; CL++)
+        if (!the_Player_Manager.repairing_Truck)
         {
-            for (int i = 0; i < the_OPB.bullet_List.Count; i++)
+            for (int CL = 1; CL < 5; CL++)
             {
-                if (!the_OPB.bullet_List[i].activeInHierarchy)
+                for (int i = 0; i < the_OPB.bullet_List.Count; i++)
                 {
-                    current_i = i;
-                    float r = Random.Range(-10, 10);
-                    the_OPB.bullet_List[i].transform.position = spawn_Point.position;
-                    Quaternion q = Quaternion.Euler(spawn_Point.rotation.x, spawn_Point.rotation.y, spawn_Point.eulerAngles.z + r);
-                    the_OPB.bullet_List[i].transform.rotation = q;
-                    the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data;
-                    the_OPB.bullet_List[i].SetActive(true);
-                    the_Player_UI.RemoveAmmoUI();
-                    DamageLevel(current_i);
-                    bullet_Left--;
-                    break;
+                    if (!the_OPB.bullet_List[i].activeInHierarchy)
+                    {
+                        current_i = i;
+                        float r = Random.Range(-10, 10);
+                        the_OPB.bullet_List[i].transform.position = spawn_Point.position;
+                        Quaternion q = Quaternion.Euler(spawn_Point.rotation.x, spawn_Point.rotation.y, spawn_Point.eulerAngles.z + r);
+                        the_OPB.bullet_List[i].transform.rotation = q;
+                        the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data;
+                        the_Gun_Sound.ShootingGun(gun_Sound);
+                        the_OPB.bullet_List[i].SetActive(true);
+                        the_Player_UI.RemoveAmmoUI();
+                        DamageLevel(current_i);
+                        bullet_Left--;
+                        break;
+                    }
                 }
             }
         }

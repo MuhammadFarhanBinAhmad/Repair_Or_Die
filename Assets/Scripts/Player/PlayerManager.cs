@@ -222,7 +222,6 @@ public class PlayerManager : BasicStates
         {
             the_Shop_Manager.ClosePopUpUI();
 
-
             the_Shop_Manager = null;
         }
     }

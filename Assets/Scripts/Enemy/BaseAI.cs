@@ -5,11 +5,15 @@ using UnityEngine;
 public class BaseAI : BasicStates
 {
     internal PlayerManager the_Player;
+
+    EnemySpawnManager the_Enemy_Spawn_Manager;
+
     EnemyUI entity_UI;
 
     private void Start()
     {
         the_Player = FindObjectOfType<PlayerManager>();
+        the_Enemy_Spawn_Manager = FindObjectOfType<EnemySpawnManager>();
         entity_UI = GetComponent<EnemyUI>();
     }
 
@@ -35,8 +39,9 @@ public class BaseAI : BasicStates
             the_Player.MoneyEarn(M);
             FindObjectOfType<PlayerUI>().UpdateMoneyUI();
             DestroyEntity();
-            FindObjectOfType<EnemySpawnManager>().total_Enemy_Left--;
-            FindObjectOfType<EnemySpawnManager>().StartCoroutine("WaveEnded");
+            the_Enemy_Spawn_Manager.total_Enemy_Left--;
+            the_Enemy_Spawn_Manager.CurentEnemyLeftUI();
+            the_Enemy_Spawn_Manager.StartCoroutine("WaveEnded");
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

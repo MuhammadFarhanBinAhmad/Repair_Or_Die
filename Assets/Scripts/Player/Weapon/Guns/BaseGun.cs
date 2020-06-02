@@ -14,10 +14,13 @@ public class BaseGun : Gun
 
     public bool reloading;
 
+    public AudioClip gun_Sound;
+
     public SO_BulletStates the_Bullet_Data;
 
     internal ShopManager the_SM;
     internal ObjectPoolBullet the_OPB;
+    internal GunSound the_Gun_Sound;
     internal PlayerManager the_Player_Manager;
     internal PlayerUI the_Player_UI;
 
@@ -25,6 +28,7 @@ public class BaseGun : Gun
     {
         the_OPB =FindObjectOfType<ObjectPoolBullet>();
         the_SM = FindObjectOfType<ShopManager>();
+        the_Gun_Sound = FindObjectOfType<GunSound>();
         the_Player_Manager = FindObjectOfType<PlayerManager>();
         the_Player_UI = FindObjectOfType<PlayerUI>();
         bullet_Left = gun_Ammo_Capacity[0];
@@ -51,6 +55,7 @@ public class BaseGun : Gun
             reloading = true;
         }
     }
+
     internal IEnumerator Reloading()
     {
         yield return new WaitForSeconds(reload_Time);
@@ -60,21 +65,28 @@ public class BaseGun : Gun
     {
         //Bullet B = Instantiate(bullet, spawn_Point.position, spawn_Point.rotation);
         int current_i = 0;
-        for (int i = 0; i < the_OPB.bullet_List.Count; i++)
+        if (!the_Player_Manager.repairing_Truck)
         {
-            if (!the_OPB.bullet_List[i].activeInHierarchy)
+            for (int i = 0; i < the_OPB.bullet_List.Count; i++)
             {
-                current_i = i;
-                the_OPB.bullet_List[i].transform.position = spawn_Point.position;
-                the_OPB.bullet_List[i].transform.rotation = spawn_Point.rotation;
-                the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data; 
-                the_OPB.bullet_List[i].SetActive(true);
-                DamageLevel(current_i);
-                the_Player_UI.RemoveAmmoUI();
-                bullet_Left--;
-                break;
+                if (!the_OPB.bullet_List[i].activeInHierarchy)
+                {
+                    current_i = i;
+                    the_OPB.bullet_List[i].transform.position = spawn_Point.position;
+                    the_OPB.bullet_List[i].transform.rotation = spawn_Point.rotation;
+                    the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data;
+                    //the_OPB.bullet_List[i].GetComponent<AudioSource>().clip = gun_Sound;
+                    the_Gun_Sound.ShootingGun(gun_Sound);
+                    the_OPB.bullet_List[i].SetActive(true);
+                    DamageLevel(current_i);
+                    the_Player_UI.RemoveAmmoUI();
+                    bullet_Left--;
+                    break;
+                }
             }
         }
+            
+        //gun_Shot.Play();
         /*switch (current_Damage_Level)
         {
             case 0:
