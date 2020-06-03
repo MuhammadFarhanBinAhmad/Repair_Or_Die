@@ -46,7 +46,7 @@ public class PlayerManager : BasicStates
     private void Update()
     {
         PlayerMovement();
-        if (Input.GetKeyDown(KeyCode.Escape) && the_Shop_Manager != null)
+        if (Input.GetKeyDown(KeyCode.Q) && the_Shop_Manager != null)
         {
             if (the_Shop_Manager.shop_Open)
             {
@@ -109,9 +109,13 @@ public class PlayerManager : BasicStates
             return false;
         }
     }
-    internal float TakingDamage(float damage)
+    internal void TakingDamage(float damage)
     {
-        return entity_Health -= damage;
+        entity_Health -= damage;
+        if (entity_Health <= 0)
+        {
+            the_Player_UI.StartCoroutine("GameOverScreen");
+        }
     }
 
     internal int MoneyEarn(int M)

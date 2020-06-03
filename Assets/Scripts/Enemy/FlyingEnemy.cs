@@ -33,7 +33,7 @@ public class FlyingEnemy : BaseAI
             case E_Current_State.Charging:
                 {
                     //transform.position = transform.right - the_Player.transform.position;
-                    transform.position = Vector2.MoveTowards(transform.position, the_Player.transform.position, entity_Speed);
+                    transform.position = Vector2.MoveTowards(transform.position, the_Player.transform.position, entity_Speed * 2);
                     break;
                 }
         }

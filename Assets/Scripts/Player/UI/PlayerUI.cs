@@ -24,9 +24,13 @@ public class PlayerUI : MonoBehaviour
     //Money 
     [Header("Money")]
     public TextMeshProUGUI Money;
+    [Header("GameOverScreen")]
+    Animator the_Anim;
+    public GameObject game_Over_Screen;
 
     private void Start()
     {
+        the_Anim = GetComponent<Animator>();
         for (int i = 0; i <= ammo_Pool_Amount; i++)
         {
             GameObject O = Instantiate(ammo_Image);
@@ -101,5 +105,12 @@ public class PlayerUI : MonoBehaviour
     {
         current_Ammo_UI[current_Ammo_UI.Count - 1].SetActive(false);
         current_Ammo_UI.Remove(current_Ammo_UI[current_Ammo_UI.Count - 1]);
+    }
+    IEnumerator GameOverScreen()
+    {
+        the_Anim.SetTrigger("GameOver");
+        yield return new WaitForSeconds(the_Anim.GetCurrentAnimatorClipInfo(0).Length);
+        //game_Over_Screen.SetActive(true);
+        Time.timeScale = 0;
     }
 }

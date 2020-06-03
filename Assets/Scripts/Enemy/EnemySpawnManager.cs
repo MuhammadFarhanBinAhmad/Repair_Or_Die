@@ -19,6 +19,7 @@ public class EnemySpawnManager : MonoBehaviour
     [Header("Enemy Pool")]
     //wave Stats
     public int current_Wave;
+    public bool wave_Ended;
     //Pool
     //public int pool_Amount;
     List<GameObject> enemy_Prefab_Pool = new List<GameObject>();
@@ -44,6 +45,8 @@ public class EnemySpawnManager : MonoBehaviour
     IEnumerator StartSpawningEnemy()
     {
         yield return new WaitForSeconds(2);
+        wave_Ended = false;
+        FindObjectOfType<ShopManager>().OpeningStore();
         current_Wave_Anim.SetBool("WaveStarting", false);
         if (enemy_Left_To_Spawn > 0)
         {
@@ -71,10 +74,15 @@ public class EnemySpawnManager : MonoBehaviour
     }
     IEnumerator WaveEnded()
     {
-
         if (total_Enemy_Left == 0)
         {
+            current_Wave_Anim.SetBool("WaveEnded", true);
+            wave_Ended = true;
+            FindObjectOfType<ShopManager>().OpeningStore();
+            yield return new WaitForSeconds(2);
+            current_Wave_Anim.SetBool("WaveEnded", false);
             yield return new WaitForSeconds(5);
+            wave_Ended = false;
             current_Wave_Anim.SetBool("WaveStarting", true);
             current_Wave++;
             if (current_Wave >= 10)
