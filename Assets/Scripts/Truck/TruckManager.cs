@@ -3,8 +3,14 @@
 public class TruckManager : MonoBehaviour
 {
     public float truck_Health;
+
     TruckUI the_Truck_UI;
+
     public bool end_Game;
+
+    public GameObject end_Game_Canvas;
+    public Animator end_Game_Anim;
+
     private void Start()
     {
         the_Truck_UI = FindObjectOfType<TruckUI>();
@@ -17,6 +23,8 @@ public class TruckManager : MonoBehaviour
         {
             end_Game = true;
             truck_Health = 100;
+            end_Game_Canvas.SetActive(true);
+            end_Game_Anim.SetTrigger("TruckRepaired");
         }
     }
 }
