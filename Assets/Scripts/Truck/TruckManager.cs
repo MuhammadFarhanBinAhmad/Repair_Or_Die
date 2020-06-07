@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TruckManager : MonoBehaviour
 {
@@ -24,7 +26,13 @@ public class TruckManager : MonoBehaviour
             end_Game = true;
             truck_Health = 100;
             end_Game_Canvas.SetActive(true);
-            end_Game_Anim.SetTrigger("TruckRepaired");
+            StartCoroutine("ChangeEndScene");
         }
+    }
+    IEnumerator ChangeEndScene()
+    {
+        yield return new WaitForSeconds(end_Game_Anim.GetCurrentAnimatorClipInfo(0).Length);
+        SceneManager.LoadScene("EndScene");
+
     }
 }

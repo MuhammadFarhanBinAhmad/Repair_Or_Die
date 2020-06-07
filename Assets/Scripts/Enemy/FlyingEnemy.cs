@@ -39,14 +39,17 @@ public class FlyingEnemy : BaseAI
         }
 
     }
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<PlayerManager>() !=null)
         {
             the_Player.TakingDamage(entity_Damage);
             the_Player.StartCoroutine("CurrentlyHit");
+            /*FindObjectOfType<EnemySpawnManager>().total_Enemy_Left--;
+            FindObjectOfType<EnemySpawnManager>().CurentEnemyLeftUI();*/
+            UpdateEnemyUI();
             Destroy(gameObject);
-            FindObjectOfType<EnemySpawnManager>().total_Enemy_Left--;
         }
     }
 }

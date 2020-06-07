@@ -18,7 +18,7 @@ public class EnemySpawnManager : MonoBehaviour
     }
     [Header("Enemy Pool")]
     //wave Stats
-    public int current_Wave;
+    public static int current_Wave;
     public bool wave_Ended;
     //Pool
     //public int pool_Amount;
@@ -31,6 +31,7 @@ public class EnemySpawnManager : MonoBehaviour
     public Transform spawn_Pos;
     internal int total_Enemy_Left;
     internal int enemy_Left_To_Spawn;
+    public static int total_Enemy_Kill;
     [Header("Wave UI")]
     public TextMeshProUGUI enemy_Left_UI;
     public TextMeshProUGUI current_Wave_UI;

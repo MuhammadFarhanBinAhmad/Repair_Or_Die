@@ -1867,7 +1867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3942a160023be1408ae03685177fcfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current_Wave: 0
   wave_Ended: 0
   enemy_Prefab:
   - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
@@ -2289,6 +2288,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7793687393533153430}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &767279646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 341505564829218811, guid: 610b5f38f08f2574ba6c7d94c92acc4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7793687393533153430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &776731446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2339,7 +2344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6080,6 +6085,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 341505564829218811, guid: 610b5f38f08f2574ba6c7d94c92acc4d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7793687393533153432, guid: 610b5f38f08f2574ba6c7d94c92acc4d,
+        type: 3}
+      propertyPath: game_Over_Screen
+      value: 
+      objectReference: {fileID: 767279646}
     - target: {fileID: 7793687394120360496, guid: 610b5f38f08f2574ba6c7d94c92acc4d,
         type: 3}
       propertyPath: weapons.Array.data[0]

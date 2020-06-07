@@ -39,10 +39,19 @@ public class BaseAI : BasicStates
             the_Player.MoneyEarn(M);
             FindObjectOfType<PlayerUI>().UpdateMoneyUI();
             DestroyEntity();
-            the_Enemy_Spawn_Manager.total_Enemy_Left--;
+            UpdateEnemyUI();
+            /*the_Enemy_Spawn_Manager.total_Enemy_Left--;
             the_Enemy_Spawn_Manager.CurentEnemyLeftUI();
             the_Enemy_Spawn_Manager.StartCoroutine("WaveEnded");
+            EnemySpawnManager.total_Enemy_Kill++;*/
         }
+    }
+    internal void UpdateEnemyUI()
+    {
+        the_Enemy_Spawn_Manager.total_Enemy_Left--;
+        the_Enemy_Spawn_Manager.CurentEnemyLeftUI();
+        the_Enemy_Spawn_Manager.StartCoroutine("WaveEnded");
+        EnemySpawnManager.total_Enemy_Kill++;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -108,9 +108,11 @@ public class PlayerUI : MonoBehaviour
     }
     IEnumerator GameOverScreen()
     {
+        print("Hit");
+        game_Over_Screen.SetActive(true);
         the_Anim.SetTrigger("GameOver");
         yield return new WaitForSeconds(the_Anim.GetCurrentAnimatorClipInfo(0).Length);
-        //game_Over_Screen.SetActive(true);
-        Time.timeScale = 0;
+        Cursor.visible = true;
+        //Time.timeScale = 0;
     }
 }

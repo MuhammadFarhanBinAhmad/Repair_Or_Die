@@ -32,6 +32,7 @@ public class PlayerManager : BasicStates
     public ShopManager the_Shop_Manager;
     //Money
     public int total_Money;
+    public static int total_Money_Collected;
     //UI
     PlayerUI the_Player_UI;
 
@@ -118,16 +119,16 @@ public class PlayerManager : BasicStates
         }
     }
 
-    internal int MoneyEarn(int M)
+    internal void MoneyEarn(int M)
     {
-        return total_Money += M;
+        total_Money += M;
+        total_Money_Collected += M;
     }
     void PlayerMovement()
     {
 
         if (is_Hit)
         {
-            print("being hit");
             entity_RB.velocity = new Vector2(-the_Knock_Back_Force, the_Knock_Back_Force);//knockback
         }
         if (!repairing_Truck)

@@ -8,6 +8,9 @@ public class SceneTransistion : MonoBehaviour
     public virtual void ChangeScene(string Scene)
     {
         SceneManager.LoadScene(Scene);
+        PlayerManager.total_Money_Collected = 0;
+        EnemySpawnManager.total_Enemy_Kill = 0;
+        EnemySpawnManager.current_Wave = 0;
     }
     public void ExitGame()
     {
