@@ -99,6 +99,7 @@ public class PlayerManager : BasicStates
     {
         pause_Menu.SetActive(true);
         pause_Menu_Open = true;
+        Cursor.visible = true;
         if (Time.timeScale != 0)
         {
             Time.timeScale = 0;
@@ -108,6 +109,7 @@ public class PlayerManager : BasicStates
     {
         pause_Menu.SetActive(false);
         pause_Menu_Open = false;
+        Cursor.visible = false;
         if (Time.timeScale != 1)
         {
             Time.timeScale = 1;
