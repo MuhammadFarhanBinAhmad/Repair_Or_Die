@@ -23,15 +23,17 @@ public class ShopManager : MonoBehaviour
     }
     public void OpenStoreMenu()
     {
+        Cursor.visible = true;
         shop_Open = true;
         shop_UI.SetActive(true);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
     public void CloseStoreMenu()
     {
+        Cursor.visible = false;
         shop_Open = false;
         shop_UI.SetActive(false);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
     public void OpenPopUpUI()
     {

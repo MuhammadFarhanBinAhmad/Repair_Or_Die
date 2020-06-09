@@ -35,6 +35,8 @@ public class PlayerManager : BasicStates
     public static int total_Money_Collected;
     //UI
     PlayerUI the_Player_UI;
+    public GameObject pause_Menu;
+    bool pause_Menu_Open;
 
     private void Start()
     {
@@ -47,15 +49,37 @@ public class PlayerManager : BasicStates
     private void Update()
     {
         PlayerMovement();
-        if (Input.GetKeyDown(KeyCode.Escape) && the_Shop_Manager != null)
+        if (entity_Health > 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (!pause_Menu_Open)
+                {
+                    OpenPauseMenu();
+                }
+                else
+                {
+                    ClosePauseMenu();
+                }
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Q) && the_Shop_Manager != null)
         {
             if (the_Shop_Manager.shop_Open)
             {
                 the_Shop_Manager.CloseStoreMenu();
+                if (Time.timeScale != 1)
+                {
+                    Time.timeScale = 1;
+                }
             }
             else
             {
                 the_Shop_Manager.OpenStoreMenu();
+                if (Time.timeScale != 0)
+                {
+                    Time.timeScale = 0;
+                }
             }
         }
     }
@@ -69,6 +93,24 @@ public class PlayerManager : BasicStates
         else
         {
             repairing_Truck = false;
+        }
+    }
+    public void OpenPauseMenu()
+    {
+        pause_Menu.SetActive(true);
+        pause_Menu_Open = true;
+        if (Time.timeScale != 0)
+        {
+            Time.timeScale = 0;
+        }
+    }
+    public void ClosePauseMenu()
+    {
+        pause_Menu.SetActive(false);
+        pause_Menu_Open = false;
+        if (Time.timeScale != 1)
+        {
+            Time.timeScale = 1;
         }
     }
     private void LateUpdate()

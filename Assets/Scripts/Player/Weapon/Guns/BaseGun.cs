@@ -37,19 +37,23 @@ public class BaseGun : Gun
     public virtual void Update()
     {
         //player cant shoot whilst repairing
-        if (!the_Player_Manager.repairing_Truck)
+        if (Time.timeScale != 0)
         {
-            if (bullet_Left > 0 && !reloading)
+            if (!the_Player_Manager.repairing_Truck)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (bullet_Left > 0 && !reloading)
                 {
-                    if (the_SM.shop_Open == false)
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        Shooting();
+                        if (the_SM.shop_Open == false)
+                        {
+                            Shooting();
+                        }
                     }
                 }
             }
         }
+       
         //start reloading
         if (Input.GetKeyDown(KeyCode.R) && bullet_Left == 0 && !reloading || Input.GetKeyDown(KeyCode.R) && !reloading)
         {
