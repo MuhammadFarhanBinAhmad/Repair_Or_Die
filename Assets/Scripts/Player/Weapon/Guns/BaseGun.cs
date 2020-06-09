@@ -31,11 +31,12 @@ public class BaseGun : Gun
         the_Gun_Sound = FindObjectOfType<GunSound>();
         the_Player_Manager = FindObjectOfType<PlayerManager>();
         the_Player_UI = FindObjectOfType<PlayerUI>();
-        bullet_Left = gun_Ammo_Capacity[0];
+        bullet_Left = gun_Ammo_Capacity[current_Ammo_Level];//weapon bullet amount
     }
 
     public virtual void Update()
     {
+        //player cant shoot whilst repairing
         if (!the_Player_Manager.repairing_Truck)
         {
             if (bullet_Left > 0 && !reloading)
@@ -49,6 +50,7 @@ public class BaseGun : Gun
                 }
             }
         }
+        //start reloading
         if (Input.GetKeyDown(KeyCode.R) && bullet_Left == 0 && !reloading || Input.GetKeyDown(KeyCode.R) && !reloading)
         {
             StartCoroutine("Reloading");
@@ -58,15 +60,16 @@ public class BaseGun : Gun
 
     internal IEnumerator Reloading()
     {
-        yield return new WaitForSeconds(reload_Time);
+        yield return new WaitForSeconds(reload_Time);//reload time
         RelodGun();
     }
     public virtual void Shooting()
     {
-        //Bullet B = Instantiate(bullet, spawn_Point.position, spawn_Point.rotation);
         int current_i = 0;
+        //spawn of bullet
         if (!the_Player_Manager.repairing_Truck)
         {
+            //check list pool
             for (int i = 0; i < the_OPB.bullet_List.Count; i++)
             {
                 if (!the_OPB.bullet_List[i].activeInHierarchy)
@@ -74,11 +77,10 @@ public class BaseGun : Gun
                     current_i = i;
                     the_OPB.bullet_List[i].transform.position = spawn_Point.position;
                     the_OPB.bullet_List[i].transform.rotation = spawn_Point.rotation;
-                    the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data;
-                    //the_OPB.bullet_List[i].GetComponent<AudioSource>().clip = gun_Sound;
+                    the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data;//collect data for bullet for current weapon
                     the_Gun_Sound.ShootingGun(gun_Sound);
                     the_OPB.bullet_List[i].SetActive(true);
-                    DamageLevel(current_i);
+                    DamageLevel(current_i);//set damage level of bullet
                     the_Player_UI.RemoveAmmoUI();
                     bullet_Left--;
                     break;
@@ -118,6 +120,7 @@ public class BaseGun : Gun
     }
     internal void DamageLevel(int current_i)
     {
+        //damage level
         switch (current_Damage_Level)
         {
             case 0:
@@ -126,9 +129,9 @@ public class BaseGun : Gun
                 }
             case 1:
                 {
-                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;
+                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;//ensure that master float wont get multiple again every function is call
                     new_Damage *= damage_Multiplier[0];
-                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;
+                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;//set bullet damage amount
                     break;
                 }
             case 2:
@@ -149,6 +152,7 @@ public class BaseGun : Gun
     }
     internal void RelodGun()
     {
+        //set gun ammo capacity   
         switch (current_Ammo_Level)
         {
             case 0:
@@ -173,6 +177,6 @@ public class BaseGun : Gun
                 }
         }
         reloading = false;
-        the_Player_UI.UpdateAmmoUI(the_Player_Manager.current_Weapon);
+        the_Player_UI.UpdateAmmoUI(the_Player_Manager.current_Weapon);//update ammo UI
     }
 }

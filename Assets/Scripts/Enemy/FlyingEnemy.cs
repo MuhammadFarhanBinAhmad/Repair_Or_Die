@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FlyingEnemy : BaseAI
 {
+
+    public float charge_Speed_Multiplier;
+
     public enum E_Current_State {Chasing,Charging };
     public E_Current_State current_State;
 
@@ -11,6 +14,7 @@ public class FlyingEnemy : BaseAI
     {
         CurrentAction();
     }
+    //special enemy ability
     void CurrentAction()
     {
         switch (current_State)
@@ -18,6 +22,7 @@ public class FlyingEnemy : BaseAI
             case E_Current_State.Chasing:
                 {
                     float dist = transform.position.x - the_Player.transform.position.x;
+                    //continue to chase enemy till a certain distance
                     if (dist >= 12.5f || dist <= -12.5f)
                     {
                         Vector2 target = new Vector2(the_Player.transform.position.x + 1.5f, transform.position.y);
@@ -32,8 +37,9 @@ public class FlyingEnemy : BaseAI
 
             case E_Current_State.Charging:
                 {
+                    //kamakazi the player
                     //transform.position = transform.right - the_Player.transform.position;
-                    transform.position = Vector2.MoveTowards(transform.position, the_Player.transform.position, entity_Speed * 2);
+                    transform.position = Vector2.MoveTowards(transform.position, the_Player.transform.position, entity_Speed * charge_Speed_Multiplier);
                     break;
                 }
         }
@@ -45,9 +51,8 @@ public class FlyingEnemy : BaseAI
         if (other.GetComponent<PlayerManager>() !=null)
         {
             the_Player.TakingDamage(entity_Damage);
+            FindObjectOfType<PlayerUI>().UpdateHealthUI();
             the_Player.StartCoroutine("CurrentlyHit");
-            /*FindObjectOfType<EnemySpawnManager>().total_Enemy_Left--;
-            FindObjectOfType<EnemySpawnManager>().CurentEnemyLeftUI();*/
             UpdateEnemyUI();
             Destroy(gameObject);
         }

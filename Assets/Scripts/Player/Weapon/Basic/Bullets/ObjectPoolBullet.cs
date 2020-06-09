@@ -10,6 +10,7 @@ public class ObjectPoolBullet : MonoBehaviour
 
     private void Start()
     {
+        //creating object pool of ammo game object
         for (int i = 0; i <= pooled_Amount; i++)
         {
             GameObject O = (GameObject)Instantiate(bullet);

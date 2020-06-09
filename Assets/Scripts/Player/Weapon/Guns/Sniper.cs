@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Sniper : BaseGun
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public override void Update()
     {
         {

@@ -24,6 +24,7 @@ public class PlayerUI : MonoBehaviour
     //Money 
     [Header("Money")]
     public TextMeshProUGUI Money;
+    public TextMeshProUGUI Money_Shop;
     [Header("GameOverScreen")]
     Animator the_Anim;
     public GameObject game_Over_Screen;
@@ -31,6 +32,7 @@ public class PlayerUI : MonoBehaviour
     private void Start()
     {
         the_Anim = GetComponent<Animator>();
+        //object pool ammo UI
         for (int i = 0; i <= ammo_Pool_Amount; i++)
         {
             GameObject O = Instantiate(ammo_Image);
@@ -60,19 +62,24 @@ public class PlayerUI : MonoBehaviour
     public void UpdateMoneyUI()
     {
         Money.text = "$"+ FindObjectOfType<PlayerManager>().total_Money.ToString();
+        Money_Shop.text = "$" + FindObjectOfType<PlayerManager>().total_Money.ToString();
     }
     public void UpdateAmmoUI(int AM)
     {
+        ////Creating ammo UI for current weapon
+        //Remove all ammo image from last weapon
         for (int i = 0; i <= gun_Images.Count-1 ;i++)
         {
             gun_Images[i].SetActive(false);
         }
-        gun_Images[AM].SetActive(true);
+        gun_Images[AM].SetActive(true);//weapon image
+        //spawn current weapon total ammo count
         for (int i = 0; i <= ammo_Pool_Amount; i++)
         {
             ammo_UI[i].SetActive(false);
         }
         current_Ammo_UI.Clear();
+        //Placement and postion of eacg ammo UI in canvas
         for (int i = 0; i <= the_Player_Manager.weapons[AM].GetComponent<BaseGun>().bullet_Left-1; i++)
         {
             {
@@ -101,6 +108,7 @@ public class PlayerUI : MonoBehaviour
             }
         }
     }
+    //removing ammo image
     public void RemoveAmmoUI()
     {
         current_Ammo_UI[current_Ammo_UI.Count - 1].SetActive(false);
@@ -108,10 +116,9 @@ public class PlayerUI : MonoBehaviour
     }
     IEnumerator GameOverScreen()
     {
-        print("Hit");
         game_Over_Screen.SetActive(true);
         the_Anim.SetTrigger("GameOver");
-        yield return new WaitForSeconds(the_Anim.GetCurrentAnimatorClipInfo(0).Length);
+        yield return new WaitForSeconds(the_Anim.GetCurrentAnimatorClipInfo(0).Length);//get length of current animation
         Cursor.visible = true;
         //Time.timeScale = 0;
     }

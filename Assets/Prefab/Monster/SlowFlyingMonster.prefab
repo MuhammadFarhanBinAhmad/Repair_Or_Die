@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1708815796230413112}
   m_Layer: 0
-  m_Name: FlyingMonster
+  m_Name: SlowFlyingMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,8 +231,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6512010896538996252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 90, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.987, y: 95.92, z: 0}
+  m_LocalScale: {x: 2.109, y: 2.095, z: 1}
   m_Children:
   - {fileID: 116221077}
   m_Father: {fileID: 1708815796230413112}
@@ -278,7 +278,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7ccb6055075df854b9091872bbfc5c78, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.12270379, a: 1}
+  m_Color: {r: 0.109683126, g: 0, b: 0.509434, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8581c9ea6b96c643a4a568a5e84ee8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity_BasicStates: {fileID: 11400000, guid: af7877d8c2202be4c8a80b5605e70668, type: 2}
+  entity_BasicStates: {fileID: 11400000, guid: fe0efcaf2035c9e4b9c5538e64ba7b8b, type: 2}
   entity_Min_Money: 0
   entity_Max_Money: 0
   blood: {fileID: 714797383567499309, guid: 81030c109f83a1842a9bcacf387d7086, type: 3}

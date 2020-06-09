@@ -230,6 +230,7 @@ MonoBehaviour:
   entity_BasicStates: {fileID: 11400000, guid: 024dd0da1ab84e94db38c414546c0cb0, type: 2}
   entity_Min_Money: 0
   entity_Max_Money: 0
+  blood: {fileID: 714797383567499309, guid: 81030c109f83a1842a9bcacf387d7086, type: 3}
 --- !u!114 &1451289554063708429
 MonoBehaviour:
   m_ObjectHideFlags: 0

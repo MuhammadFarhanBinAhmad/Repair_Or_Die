@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MachineGun : BaseGun
 {
+    /// <summary>
+    /// same as base gun, only difference is the player able hold the mouse down
+    /// </summary>
     public override void Update()
     {
         {

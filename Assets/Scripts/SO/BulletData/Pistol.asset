@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec3999fabe6bbf440a02bba64520dd16, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 6
   speed: 9000
   destroy_Time: 5

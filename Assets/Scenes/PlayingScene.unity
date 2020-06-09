@@ -1870,71 +1870,75 @@ MonoBehaviour:
   wave_Ended: 0
   enemy_Prefab:
   - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
+  - {fileID: 6865554955986648678, guid: 5738b4755f314954e93ebf6f8b543cf2, type: 3}
   - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
   - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
+  - {fileID: 2499352908097108465, guid: 4cc0bf6cb06e26c47a59dbb3d78526e7, type: 3}
+  - {fileID: 1708815796230413119, guid: b2ff70bab6026614ca86db5695c3037d, type: 3}
   - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
   current_Amount_Of_Enemy_Spawn:
-  - enemy_Type_To_Spawn: 01000000010000000100000001000000
+  - enemy_Type_To_Spawn: 0500000004000000
+    enemy_Type:
+    - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
+    - {fileID: 6865554955986648678, guid: 5738b4755f314954e93ebf6f8b543cf2, type: 3}
+  - enemy_Type_To_Spawn: 0800000006000000
+    enemy_Type:
+    - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
+    - {fileID: 6865554955986648678, guid: 5738b4755f314954e93ebf6f8b543cf2, type: 3}
+  - enemy_Type_To_Spawn: 04000000050000000400000005000000
+    enemy_Type:
+    - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
+    - {fileID: 6865554955986648678, guid: 5738b4755f314954e93ebf6f8b543cf2, type: 3}
+    - {fileID: 2499352908097108465, guid: 4cc0bf6cb06e26c47a59dbb3d78526e7, type: 3}
+    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
+  - enemy_Type_To_Spawn: 08000000040000000600000004000000
     enemy_Type:
     - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
     - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
     - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
-    - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
-  - enemy_Type_To_Spawn: 01000000010000000100000001000000
+    - {fileID: 2499352908097108465, guid: 4cc0bf6cb06e26c47a59dbb3d78526e7, type: 3}
+  - enemy_Type_To_Spawn: 06000000050000000400000004000000
     enemy_Type:
     - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
+    - {fileID: 6865554955986648678, guid: 5738b4755f314954e93ebf6f8b543cf2, type: 3}
     - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
-    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
     - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
-  - enemy_Type_To_Spawn: 01000000010000000100000001000000
+  - enemy_Type_To_Spawn: 05000000050000000500000005000000
     enemy_Type:
     - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
-    - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
-    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
+    - {fileID: 6865554955986648678, guid: 5738b4755f314954e93ebf6f8b543cf2, type: 3}
+    - {fileID: 1708815796230413119, guid: b2ff70bab6026614ca86db5695c3037d, type: 3}
     - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
-  - enemy_Type_To_Spawn: 01000000010000000100000001000000
+  - enemy_Type_To_Spawn: 04000000050000000500000006000000
     enemy_Type:
     - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
-    - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
-    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
+    - {fileID: 6865554955986648678, guid: 5738b4755f314954e93ebf6f8b543cf2, type: 3}
+    - {fileID: 2499352908097108465, guid: 4cc0bf6cb06e26c47a59dbb3d78526e7, type: 3}
     - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
-  - enemy_Type_To_Spawn: 01000000010000000100000001000000
+    - {fileID: 1708815796230413119, guid: b2ff70bab6026614ca86db5695c3037d, type: 3}
+  - enemy_Type_To_Spawn: 06000000060000000500000006000000
+    enemy_Type:
+    - {fileID: 2499352908097108465, guid: 4cc0bf6cb06e26c47a59dbb3d78526e7, type: 3}
+    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
+    - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
+  - enemy_Type_To_Spawn: 07000000060000000700000006000000
+    enemy_Type:
+    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
+    - {fileID: 2499352908097108465, guid: 4cc0bf6cb06e26c47a59dbb3d78526e7, type: 3}
+    - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
+    - {fileID: 1708815796230413119, guid: b2ff70bab6026614ca86db5695c3037d, type: 3}
+  - enemy_Type_To_Spawn: 0200000002000000020000000200000003000000020000000200000001000000
     enemy_Type:
     - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
+    - {fileID: 6865554955986648678, guid: 5738b4755f314954e93ebf6f8b543cf2, type: 3}
     - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
-    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
     - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
-  - enemy_Type_To_Spawn: 01000000010000000100000001000000
-    enemy_Type:
-    - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
-    - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
+    - {fileID: 1708815796230413119, guid: b2ff70bab6026614ca86db5695c3037d, type: 3}
     - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
-    - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
-  - enemy_Type_To_Spawn: 01000000010000000100000001000000
-    enemy_Type:
-    - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
-    - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
-    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
-    - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
-  - enemy_Type_To_Spawn: 01000000010000000100000001000000
-    enemy_Type:
-    - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
-    - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
-    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
-    - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
-  - enemy_Type_To_Spawn: 01000000010000000100000001000000
-    enemy_Type:
-    - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
-    - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
-    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
-    - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
-  - enemy_Type_To_Spawn: 01000000010000000100000001000000
-    enemy_Type:
-    - {fileID: 2499352908097108465, guid: 209afaa87aca1e6479db0b5aeeb5d45c, type: 3}
-    - {fileID: 6865554955986648678, guid: 1960200bd50f7474ca7b60995e4a5b54, type: 3}
-    - {fileID: 3341307316877060985, guid: 73d7e7b34f421734e9de35784b3ea205, type: 3}
-    - {fileID: 1708815796230413119, guid: 8260b4e880a245d40a4f170707387f56, type: 3}
-  test: []
+    - {fileID: 2499352908097108465, guid: 4cc0bf6cb06e26c47a59dbb3d78526e7, type: 3}
+    - {fileID: 6865554955986648678, guid: b6720e5d031947f428670568377fe1a1, type: 3}
+  - enemy_Type_To_Spawn: 
+    enemy_Type: []
   spawn_Pos: {fileID: 533103538}
   enemy_Left_UI: {fileID: 1879845267}
   current_Wave_UI: {fileID: 547213683}
@@ -5049,6 +5053,31 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2606633482718280622, guid: 801d63b52182041479eca4177ffb333e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606633482718280622, guid: 801d63b52182041479eca4177ffb333e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606633482718280622, guid: 801d63b52182041479eca4177ffb333e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606633482718280622, guid: 801d63b52182041479eca4177ffb333e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606633482718280622, guid: 801d63b52182041479eca4177ffb333e,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2977336276131029486, guid: 801d63b52182041479eca4177ffb333e,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -5811,6 +5840,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 801d63b52182041479eca4177ffb333e, type: 3}
+--- !u!114 &3251620465249221444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5287578483443133840, guid: 801d63b52182041479eca4177ffb333e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3251620465249221443}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3762646158373704235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6095,6 +6136,11 @@ PrefabInstance:
       propertyPath: game_Over_Screen
       value: 
       objectReference: {fileID: 767279646}
+    - target: {fileID: 7793687393533153432, guid: 610b5f38f08f2574ba6c7d94c92acc4d,
+        type: 3}
+      propertyPath: Money_Shop
+      value: 
+      objectReference: {fileID: 3251620465249221444}
     - target: {fileID: 7793687394120360496, guid: 610b5f38f08f2574ba6c7d94c92acc4d,
         type: 3}
       propertyPath: weapons.Array.data[0]
@@ -6115,6 +6161,11 @@ PrefabInstance:
       propertyPath: weapons.Array.data[3]
       value: 
       objectReference: {fileID: 1590104437}
+    - target: {fileID: 7793687394120360496, guid: 610b5f38f08f2574ba6c7d94c92acc4d,
+        type: 3}
+      propertyPath: total_Money
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 7793687394120360499, guid: 610b5f38f08f2574ba6c7d94c92acc4d,
         type: 3}
       propertyPath: m_Name

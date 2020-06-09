@@ -12,6 +12,7 @@ public class EndgameStats : MonoBehaviour
 
     private void Start()
     {
+        //show stats to player
         wave_Survive.text = "Wave Survive: " + EnemySpawnManager.current_Wave.ToString();
         total_Money.text = "Total Money Earn:  " + PlayerManager.total_Money_Collected.ToString();
         total_Enemy.text = "Total Enemy Kill:  " + EnemySpawnManager.total_Enemy_Kill.ToString();

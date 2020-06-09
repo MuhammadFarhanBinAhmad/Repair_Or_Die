@@ -14,7 +14,6 @@ public class Crosshair : MonoBehaviour
     public void FixedUpdate()
     {
         ths_Crosshair.transform.position = Input.mousePosition;
-
         Vector3 objectPos = Camera.main.WorldToScreenPoint(FindObjectOfType<PlayerManager>().transform.position);
     }
 }

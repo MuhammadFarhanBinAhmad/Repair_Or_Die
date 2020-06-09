@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 461b8024da40ddc48b627e0ffe6b23b6, type: 3}
-  m_Name: FastEnemy
+  m_Name: BossMonster
   m_EditorClassIdentifier: 
-  health: 25
-  speed: 0.4
-  damage: 3
-  min_Money: 30
-  max_Money: 45
+  health: 100
+  speed: 0.1
+  damage: 35
+  min_Money: 200
+  max_Money: 400

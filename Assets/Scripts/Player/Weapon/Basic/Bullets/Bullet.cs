@@ -41,12 +41,14 @@ public class Bullet : MonoBehaviour
     {
         if (other.GetComponent<BaseAI>() != null)
         {
-            other.GetComponent<BaseAI>().TakeDamage(damage);
+            other.GetComponent<BaseAI>().TakeDamage(damage);//enemy take damge
+            //for sniper weapon
             if (FindObjectOfType<PlayerManager>().current_Weapon != 2)
             {
                 Destroy();
             }
         }
+        //destroy gameobject when hit floor
         if (other.gameObject.layer == 8)
         {
             Destroy();
