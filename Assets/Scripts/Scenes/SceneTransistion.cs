@@ -11,6 +11,7 @@ public class SceneTransistion : MonoBehaviour
         PlayerManager.total_Money_Collected = 0;
         EnemySpawnManager.total_Enemy_Kill = 0;
         EnemySpawnManager.current_Wave = 0;
+        Time.timeScale = 1;
     }
     public void ExitGame()
     {
