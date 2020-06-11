@@ -41,7 +41,6 @@ public class EnemySpawnManager : MonoBehaviour
         CurrentWaveUI();
         CountTotalEnemy();
         StartCoroutine("StartSpawningEnemy");
-        print(current_Amount_Of_Enemy_Spawn[current_Wave].enemy_Type.Count);
     }
     IEnumerator StartSpawningEnemy()
     {

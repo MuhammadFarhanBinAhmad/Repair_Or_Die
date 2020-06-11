@@ -37,6 +37,9 @@ public class PlayerManager : BasicStates
     PlayerUI the_Player_UI;
     public GameObject pause_Menu;
     bool pause_Menu_Open;
+    //testing
+    public float player_Health_Regen;
+    bool currently_Moving;
 
     private void Start()
     {
@@ -50,20 +53,22 @@ public class PlayerManager : BasicStates
     {
         PlayerMovement();
         if (entity_Health > 0)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
+        { 
             {
-                if (!pause_Menu_Open)
+                if (Input.GetKeyDown(KeyCode.Escape) && !the_Shop_Manager.shop_Open)
                 {
-                    OpenPauseMenu();
-                }
-                else
-                {
-                    ClosePauseMenu();
+                    if (!pause_Menu_Open)
+                    {
+                        OpenPauseMenu();
+                    }
+                    else
+                    {
+                        ClosePauseMenu();
+                    }
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Q) && the_Shop_Manager != null)
+        if (Input.GetKeyDown(KeyCode.Q) && the_Shop_Manager != null )
         {
             if (the_Shop_Manager.shop_Open)
             {
@@ -85,6 +90,14 @@ public class PlayerManager : BasicStates
     }
     private void FixedUpdate()
     {
+        if (Input.GetKey(KeyCode.P) && entity_RB.velocity.x ==0 && !repairing_Truck)
+        {
+            if (entity_Health < 100)
+            {
+                entity_Health += player_Health_Regen;
+                the_Player_UI.UpdateHealthUI();
+            }
+        }
         if (Input.GetKey(KeyCode.E) && the_Truck_Manager != null)
         {
             repairing_Truck = true;
@@ -170,7 +183,6 @@ public class PlayerManager : BasicStates
     }
     void PlayerMovement()
     {
-
         if (is_Hit)
         {
             entity_RB.velocity = new Vector2(-the_Knock_Back_Force, the_Knock_Back_Force);//knockback

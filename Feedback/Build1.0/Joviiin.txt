@@ -1,0 +1,27 @@
+Joviin:
+Upgrade dot what they mean
+Auto reload
+Overwhelm
+Game over not working
+1st level too hard
+No clear instruction
+Someway to regain health
+Jump issue:
+No point in jumping (too low and flat)
+Gravity too floaty
+Jump too low
+Enemy too fast for jump
+AI have a delay when jump
+
+UI:
+Usa image for enemy left
+Bar is not enough for health info(dont know enemy give different damage)
+Health bar only appear when enemy is shot(maybe)
+Maybe make a smaller UI haelthbar
+Ammo, look nice but is it better? Better use number?
+Plying view:
+Too low?
+Need to bring up?
+Or bring UI down as well with the floor
+Trouble to look both up at UI and playing at same time is troublesome to player
+Make a debug mode

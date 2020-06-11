@@ -11,6 +11,7 @@ public class PlayerUI : MonoBehaviour
     //health
     [Header("Health")]
     public Image player_Health_Bar;
+    public TextMeshProUGUI health_Text;
     //Ammo
     [Header("Ammo")]
     public List<GameObject> gun_Images = new List<GameObject>();
@@ -58,6 +59,7 @@ public class PlayerUI : MonoBehaviour
     public void UpdateHealthUI()
     {
         player_Health_Bar.fillAmount = the_Player_Manager.entity_Health / the_Player_Manager.entity_BasicStates.health;
+        health_Text.text = the_Player_Manager.entity_Health.ToString("0") + "/100";
     }
     public void UpdateMoneyUI()
     {
@@ -90,15 +92,15 @@ public class PlayerUI : MonoBehaviour
                 }
                 else
                 {
-                    ammo_UI[i].transform.position = new Vector2(ammo_UI[i - 1].transform.position.x + 10, ammo_UI[i - 1].transform.position.y);
+                    ammo_UI[i].transform.position = new Vector2(ammo_UI[i - 1].transform.position.x + 17, ammo_UI[i - 1].transform.position.y);
                     if (ammo_UI[i].transform.position.x >= bullet_Starting_Trans.transform.position.x + 375)
                     {
                         if (ammo_UI[i].transform.position.x != bullet_Starting_Trans.transform.position.x)
                         {
-                            ammo_UI[i].transform.position = new Vector2(bullet_Starting_Trans.transform.position.x, ammo_UI[i - 1].transform.position.y - 10);
+                            ammo_UI[i].transform.position = new Vector2(bullet_Starting_Trans.transform.position.x, ammo_UI[i - 1].transform.position.y - 15);
                         }
                         else
-                        ammo_UI[i].transform.position = new Vector2(ammo_UI[i - 1].transform.position.x + 10, ammo_UI[i - 1].transform.position.y - 10);
+                        ammo_UI[i].transform.position = new Vector2(ammo_UI[i - 1].transform.position.x + 17, ammo_UI[i - 1].transform.position.y - 15);
                     }
                 }
 

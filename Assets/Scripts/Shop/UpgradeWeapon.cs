@@ -47,8 +47,9 @@ public class UpgradeWeapon : MonoBehaviour
             {
                 if (the_Player_Manager.total_Money >= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level])
                 {
-                    upgrable_Weapon.current_Damage_Level++;
                     the_Player_Manager.total_Money -= the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level];
+                    print(the_Stats.damage_Upgrade_Cost[upgrable_Weapon.current_Damage_Level]);
+                    upgrable_Weapon.current_Damage_Level++;
                     the_Upgrade_Weapon_UI.UpdateDamageCostUI();
                     the_Player_UI.UpdateMoneyUI();
                 }
@@ -63,10 +64,12 @@ public class UpgradeWeapon : MonoBehaviour
             {
                 if (the_Player_Manager.total_Money >= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level])
                 {
-                    upgrable_Weapon.current_Ammo_Level++;
                     the_Player_Manager.total_Money -= the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level];
+                    print(the_Stats.ammo_Upgrade_Cost[upgrable_Weapon.current_Ammo_Level]);
+                    upgrable_Weapon.current_Ammo_Level++;
                     the_Player_UI.UpdateMoneyUI();
                     the_Upgrade_Weapon_UI.UpdateAmmoCostUI();
+
                 }
             }
         }

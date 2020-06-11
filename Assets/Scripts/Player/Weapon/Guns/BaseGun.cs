@@ -15,6 +15,7 @@ public class BaseGun : Gun
     public bool reloading;
 
     public AudioClip gun_Sound;
+    public AudioSource reload_Sound;
 
     public SO_BulletStates the_Bullet_Data;
 
@@ -50,12 +51,20 @@ public class BaseGun : Gun
                             Shooting();
                         }
                     }
+                    //Special Attack
+                    /*if (Input.GetMouseButtonDown(1))//
+                    {
+                        if (the_SM.shop_Open == false)
+                        {
+                            SpecialAttack();
+                        }
+                    }*/
                 }
             }
         }
        
         //start reloading
-        if (Input.GetKeyDown(KeyCode.R) && bullet_Left == 0 && !reloading || Input.GetKeyDown(KeyCode.R) && !reloading)
+        if (bullet_Left == 0 && !reloading || Input.GetKeyDown(KeyCode.R) && !reloading)
         {
             StartCoroutine("Reloading");
             reloading = true;
@@ -64,6 +73,7 @@ public class BaseGun : Gun
 
     internal IEnumerator Reloading()
     {
+        reload_Sound.Play();
         yield return new WaitForSeconds(reload_Time);//reload time
         RelodGun();
     }
@@ -91,37 +101,12 @@ public class BaseGun : Gun
                 }
             }
         }
-            
-        //gun_Shot.Play();
-        /*switch (current_Damage_Level)
-        {
-            case 0:
-                {
-                    break;
-                }
-            case 1:
-                {
-                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;
-                    new_Damage *= damage_Multiplier[0];
-                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;
-                    break;
-                }
-            case 2:
-                {
-                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;
-                    new_Damage *= damage_Multiplier[1];
-                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;
-                    break;
-                }
-            case 3:
-                {
-                    float new_Damage = the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage;
-                    new_Damage *= damage_Multiplier[2];
-                    the_OPB.bullet_List[current_i].GetComponent<Bullet>().damage = new_Damage;
-                    break;
-                }
-        }*/
     }
+    /*public virtual void SpecialAttack()
+    {
+        int BL = bullet_Left;
+
+    }*/
     internal void DamageLevel(int current_i)
     {
         //damage level
