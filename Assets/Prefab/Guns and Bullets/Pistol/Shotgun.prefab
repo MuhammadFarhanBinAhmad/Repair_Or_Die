@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7245070816803109893}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.574, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.099999994, y: 0.0275, z: 0.25}
   m_Children: []
   m_Father: {fileID: 9056995381711943756}
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7ccb6055075df854b9091872bbfc5c78, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f36cc4eb512cab44ca12d173af92fcf4, type: 3}
   m_Color: {r: 0.93327296, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   spawn_Point: {fileID: 3596734351368134597}
   gun_Position: {fileID: 0}
   fire_Rate: 1
-  reload_Time: 5
+  reload_Time: 3
   bullet_Left: 0
   gun_Ammo_Capacity: 0f000000190000001e00000028000000
   damage_Multiplier:
@@ -140,4 +140,6 @@ MonoBehaviour:
   current_Damage_Level: 0
   current_Ammo_Level: 0
   reloading: 0
+  gun_Sound: {fileID: 8300000, guid: 73a2de8daaff9b542b4eedc0a84ba9bd, type: 3}
+  reload_Sound: {fileID: 0}
   the_Bullet_Data: {fileID: 11400000, guid: b35da42c9254ea34faf7cdb9834515b2, type: 2}

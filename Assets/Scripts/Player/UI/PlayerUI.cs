@@ -15,13 +15,15 @@ public class PlayerUI : MonoBehaviour
     //Ammo
     [Header("Ammo")]
     public List<GameObject> gun_Images = new List<GameObject>();
-    public GameObject ammo_Image;
+    //public GameObject ammo_Image;
     public GameObject player_Canvas;
     public GameObject the_Reloading_Text;
-    public Transform bullet_Starting_Trans;
+    /*public Transform bullet_Starting_Trans;
     internal List<GameObject> ammo_UI = new List<GameObject>();
     public List<GameObject> current_Ammo_UI = new List<GameObject>();
-    public int ammo_Pool_Amount;
+    public int ammo_Pool_Amount;*/
+    public TextMeshProUGUI ammo_Text;
+    internal int magazine_Capacity;
     //Money 
     [Header("Money")]
     public TextMeshProUGUI Money;
@@ -34,14 +36,14 @@ public class PlayerUI : MonoBehaviour
     {
         the_Anim = GetComponent<Animator>();
         //object pool ammo UI
-        for (int i = 0; i <= ammo_Pool_Amount; i++)
+        /*for (int i = 0; i <= ammo_Pool_Amount; i++)
         {
             GameObject O = Instantiate(ammo_Image);
             ammo_UI.Add(O);
             O.SetActive(false);
             GameObject.DontDestroyOnLoad(O);
             O.transform.parent = player_Canvas.transform;
-        }
+        }*/
         the_Player_Manager = FindObjectOfType<PlayerManager>();
         UpdateAmmoUI(0);
     }
@@ -67,6 +69,10 @@ public class PlayerUI : MonoBehaviour
         Money_Shop.text = "$" + FindObjectOfType<PlayerManager>().total_Money.ToString();
     }
     public void UpdateAmmoUI(int AM)
+    {
+        ammo_Text.text = the_Player_Manager.weapons[AM].GetComponent<BaseGun>().gun_Ammo_Capacity[the_Player_Manager.weapons[AM].GetComponent<BaseGun>().current_Ammo_Level].ToString() + "/" + the_Player_Manager.weapons[AM].GetComponent<BaseGun>().bullet_Left;
+    }
+    /*public void UpdateAmmoUI(int AM)
     {
         ////Creating ammo UI for current weapon
         //Remove all ammo image from last weapon
@@ -115,7 +121,7 @@ public class PlayerUI : MonoBehaviour
     {
         current_Ammo_UI[current_Ammo_UI.Count - 1].SetActive(false);
         current_Ammo_UI.Remove(current_Ammo_UI[current_Ammo_UI.Count - 1]);
-    }
+    }*/
     IEnumerator GameOverScreen()
     {
         game_Over_Screen.SetActive(true);

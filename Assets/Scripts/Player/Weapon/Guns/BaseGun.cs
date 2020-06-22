@@ -95,8 +95,9 @@ public class BaseGun : Gun
                     the_Gun_Sound.ShootingGun(gun_Sound);
                     the_OPB.bullet_List[i].SetActive(true);
                     DamageLevel(current_i);//set damage level of bullet
-                    the_Player_UI.RemoveAmmoUI();
+                    //the_Player_UI.RemoveAmmoUI();
                     bullet_Left--;
+                    the_Player_UI.UpdateAmmoUI(the_Player_Manager.current_Weapon);
                     break;
                 }
             }

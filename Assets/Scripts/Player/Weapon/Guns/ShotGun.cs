@@ -46,7 +46,7 @@ public class ShotGun : BaseGun
                         the_OPB.bullet_List[i].GetComponent<Bullet>().the_Bullet_Stats = the_Bullet_Data;
                         the_Gun_Sound.ShootingGun(gun_Sound);
                         the_OPB.bullet_List[i].SetActive(true);
-                        the_Player_UI.RemoveAmmoUI();
+                        //the_Player_UI.RemoveAmmoUI();
                         DamageLevel(current_i);
                         bullet_Left--;
                         break;
